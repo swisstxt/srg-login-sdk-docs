@@ -34,6 +34,7 @@ function PlatformCards() {
     {title: 'iOS', link: '/docs/getting-started/ios', description: 'Swift Package Manager — zero auth'},
     {title: 'Android TV', link: '/docs/getting-started/android-tv', description: 'Device Code Flow — planned'},
     {title: 'tvOS', link: '/docs/getting-started/tvos', description: 'Device Code Flow — planned'},
+    {title: 'Web / JS', link: '/docs/getting-started/web', description: 'JavaScript / WASM — planned'},
   ];
 
   return (
@@ -41,7 +42,7 @@ function PlatformCards() {
       <div className="container">
         <div className="row">
           {platforms.map((platform) => (
-            <div key={platform.title} className={clsx('col col--3')}>
+            <div key={platform.title} className={clsx('col col--4 margin-bottom--lg')}>
               <div className="text--center padding-horiz--md padding-vert--lg">
                 <Heading as="h3">
                   <Link to={platform.link}>{platform.title}</Link>

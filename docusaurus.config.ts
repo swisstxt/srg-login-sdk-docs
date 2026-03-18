@@ -61,14 +61,34 @@ const config: Config = {
           label: 'API Reference',
         },
         {
-          href: 'https://github.com/swisstxt/srg-login-sdk-distribution-android',
-          label: 'Android',
+          type: 'dropdown',
+          label: 'Distribution',
           position: 'right',
+          items: [
+            {
+              href: 'https://github.com/swisstxt/srg-login-sdk-distribution-android',
+              label: 'Android (Maven)',
+            },
+            {
+              href: 'https://github.com/swisstxt/srg-login-sdk-distribution-apple',
+              label: 'iOS (SPM)',
+            },
+          ],
         },
         {
-          href: 'https://github.com/swisstxt/srg-login-sdk-distribution-apple',
-          label: 'iOS',
+          type: 'dropdown',
+          label: 'Sample Apps',
           position: 'right',
+          items: [
+            {
+              href: 'https://github.com/swisstxt/srg-login-sdk-sample-android',
+              label: 'Android Sample',
+            },
+            {
+              href: 'https://github.com/swisstxt/srg-login-sdk-sample-ios',
+              label: 'iOS Sample',
+            },
+          ],
         },
       ],
     },
@@ -102,6 +122,19 @@ const config: Config = {
             {
               label: 'iOS (SPM)',
               href: 'https://github.com/swisstxt/srg-login-sdk-distribution-apple',
+            },
+          ],
+        },
+        {
+          title: 'Sample Apps',
+          items: [
+            {
+              label: 'Android Sample',
+              href: 'https://github.com/swisstxt/srg-login-sdk-sample-android',
+            },
+            {
+              label: 'iOS Sample',
+              href: 'https://github.com/swisstxt/srg-login-sdk-sample-ios',
             },
           ],
         },

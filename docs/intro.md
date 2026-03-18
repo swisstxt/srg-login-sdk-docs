@@ -17,6 +17,7 @@ The SRG Login SDK is a Kotlin Multiplatform library that provides secure authent
 | iOS (iPhone/iPad) | Production-ready | [SPM (GitHub)](https://github.com/swisstxt/srg-login-sdk-distribution-apple) |
 | Android TV / Google TV | Planned | Device Code Flow (RFC 8628) |
 | tvOS (Apple TV) | Planned | Device Code Flow (RFC 8628) |
+| Web / JavaScript | Planned | npm (future) |
 
 ## Quick links
 

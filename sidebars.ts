@@ -12,6 +12,7 @@ const sidebars: SidebarsConfig = {
         'getting-started/ios',
         'getting-started/android-tv',
         'getting-started/tvos',
+        'getting-started/web',
       ],
     },
     {

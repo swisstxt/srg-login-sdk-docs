@@ -42,6 +42,8 @@ const sidebars: SidebarsConfig = {
       label: 'Migration',
       items: [
         'migration/index',
+        'migration/android',
+        'migration/ios',
         'migration/changelog',
       ],
     },

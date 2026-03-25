@@ -1,0 +1,102 @@
+name: Update on SDK Release
+
+on:
+  repository_dispatch:
+    types: [sdk-release]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'SDK version (e.g. 1.0.0)'
+        required: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    name: Update API Reference & Versions
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Determine version
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
+            echo "version=${{ github.event.client_payload.version }}" >> $GITHUB_OUTPUT
+          else
+            echo "version=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
+          fi
+          echo "SDK version: ${{ steps.version.outputs.version || github.event.client_payload.version }}"
+
+      - name: Download Dokka HTML from SDK release
+        env:
+          GH_TOKEN: ${{ secrets.SDK_REPO_TOKEN }}
+        run: |
+          VERSION=${{ steps.version.outputs.version }}
+          echo "Downloading Dokka HTML for v$VERSION..."
+
+          gh release download "v$VERSION" \
+            --repo swisstxt/srg-login-mobile-sdk \
+            --pattern "dokka-html.zip" \
+            --dir /tmp || echo "::warning::No Dokka artifact found for v$VERSION"
+
+          if [ -f /tmp/dokka-html.zip ]; then
+            echo "Extracting Dokka HTML..."
+            rm -rf static/api-reference/kotlin/
+            mkdir -p static/api-reference/kotlin/
+            unzip -o /tmp/dokka-html.zip -d static/api-reference/kotlin/
+            echo "dokka_updated=true" >> $GITHUB_ENV
+          else
+            echo "dokka_updated=false" >> $GITHUB_ENV
+          fi
+
+      - name: Update version in getting-started pages
+        run: |
+          VERSION=${{ steps.version.outputs.version }}
+          echo "Updating version references to $VERSION..."
+
+          # Android getting-started: version catalog example
+          if [ -f docs/getting-started/android.md ]; then
+            sed -i "s/srglogin = \"[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*[^\"]*\"/srglogin = \"$VERSION\"/" docs/getting-started/android.md
+          fi
+
+          # iOS getting-started: pre-release example
+          if [ -f docs/getting-started/ios.md ]; then
+            sed -i "s/exact: \"[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*[^\"]*\"/exact: \"$VERSION\"/" docs/getting-started/ios.md
+          fi
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "::notice::No changes detected — nothing to update."
+          fi
+
+      - name: Create PR with updates
+        if: steps.changes.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          title: "docs: update API reference for SDK v${{ steps.version.outputs.version }}"
+          body: |
+            Automated update triggered by SDK release **v${{ steps.version.outputs.version }}**.
+
+            ### Changes
+            - ${{ env.dokka_updated == 'true' && 'Updated Dokka Kotlin API reference' || 'Dokka artifact not found (API reference unchanged)' }}
+            - Updated version numbers in getting-started pages
+
+            ### Manual review checklist
+            - [ ] Verify Dokka HTML renders correctly at `/api-reference/kotlin/`
+            - [ ] Check version numbers in getting-started pages are correct
+            - [ ] Update `docs/migration/changelog.md` with consumer-facing release notes (if needed)
+
+            ---
+            *Triggered by `repository_dispatch` from SDK release workflow.*
+          branch: chore/sdk-update-v${{ steps.version.outputs.version }}
+          commit-message: "docs: update API reference and versions for SDK v${{ steps.version.outputs.version }}"

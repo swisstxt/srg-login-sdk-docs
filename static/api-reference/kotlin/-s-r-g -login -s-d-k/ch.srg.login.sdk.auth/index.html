@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>ch.srg.login.sdk.auth</title>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../ui-kit/ui-kit.min.js" defer="defer"></script>
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../index.html" tabindex="1">
+                    SRG Login SDK
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+1.0.0-SNAPSHOT        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true"
+                        data-filter=":srglogin-core/androidMain">android</button>
+                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
+                        data-filter=":srglogin-core/appleMain">apple</button>
+                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
+                        data-filter=":srglogin-core/commonMain">common</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":srglogin-core/androidMain"
+                                       data-filter=":srglogin-core/androidMain"/>
+                                <span class="checkbox--icon"></span>
+                                android
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":srglogin-core/appleMain"
+                                       data-filter=":srglogin-core/appleMain"/>
+                                <span class="checkbox--icon"></span>
+                                apple
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":srglogin-core/commonMain"
+                                       data-filter=":srglogin-core/commonMain"/>
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    SRG Login SDK
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="package" id="content" pageIds="SRG Login SDK::ch.srg.login.sdk.auth////PointingToDeclaration//1063167284">
+  <div class="breadcrumbs"><a href="../../index.html">SRG Login SDK</a><span class="delimiter">/</span><span class="current">ch.srg.login.sdk.auth</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="tableheader">Types</h2>
+        <div class="table"><a data-name="-126252742%2FClasslikes%2F-1868661322" anchor-label="AndroidAuthContext" id="-126252742%2FClasslikes%2F-1868661322" data-filterable-set=":srglogin-core/androidMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/androidMain" data-filterable-set=":srglogin-core/androidMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-android-auth-context/index.html"><span>Android</span><wbr></wbr><span>Auth</span><wbr></wbr><span><span>Context</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-126252742%2FClasslikes%2F-1868661322"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":srglogin-core/androidMain" data-filterable-set=":srglogin-core/androidMain" data-active="" data-toggle=":srglogin-core/androidMain">android</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/androidMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-android-auth-context/index.html">AndroidAuthContext</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>context<span class="token operator">: </span>ERROR CLASS: Symbol not found for Context<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>activity<span class="token operator">: </span>ERROR CLASS: Symbol not found for Activity?<span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>platformType<span class="token operator">: </span><a href="-platform-type/index.html">PlatformType</a><span class="token operator"> = </span>PlatformType.ANDROID_MOBILE</span></span><span class="token punctuation">)</span> : <a href="-platform-auth-context/index.html">PlatformAuthContext</a>, <a href="-web-auth-capable/index.html">WebAuthCapable</a></div><div class="brief "><p class="paragraph">Android mobile/tablet authentication context. Provides necessary Android components for Chrome Custom Tabs authentication.</p></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-515887396%2FClasslikes%2F-1868661322" anchor-label="AndroidTvAuthContext" id="-515887396%2FClasslikes%2F-1868661322" data-filterable-set=":srglogin-core/androidMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/androidMain" data-filterable-set=":srglogin-core/androidMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-android-tv-auth-context/index.html"><span>Android</span><wbr></wbr><span>Tv</span><wbr></wbr><span>Auth</span><wbr></wbr><span><span>Context</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-515887396%2FClasslikes%2F-1868661322"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":srglogin-core/androidMain" data-filterable-set=":srglogin-core/androidMain" data-active="" data-toggle=":srglogin-core/androidMain">android</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/androidMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-android-tv-auth-context/index.html">AndroidTvAuthContext</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>context<span class="token operator">: </span>ERROR CLASS: Symbol not found for Context<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>activity<span class="token operator">: </span>ERROR CLASS: Symbol not found for Activity?<span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">isLeanback<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>platformType<span class="token operator">: </span><a href="-platform-type/index.html">PlatformType</a><span class="token operator"> = </span>PlatformType.ANDROID_TV</span></span><span class="token punctuation">)</span> : <a href="-platform-auth-context/index.html">PlatformAuthContext</a>, <a href="-tv-platform/index.html">TvPlatform</a></div><div class="brief "><p class="paragraph">Android TV/Google TV authentication context. Optimized for TV platforms with limited input capabilities.</p></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="285254070%2FClasslikes%2F1859215268" anchor-label="BackChannelLogoutListener" id="285254070%2FClasslikes%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-back-channel-logout-listener/index.html"><span>Back</span><wbr></wbr><span>Channel</span><wbr></wbr><span>Logout</span><wbr></wbr><span><span>Listener</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="285254070%2FClasslikes%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-back-channel-logout-listener/index.html">BackChannelLogoutListener</a></div><div class="brief "><p class="paragraph">Listener interface for back-channel logout notifications. Implementations should handle server-initiated logout events.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-736386860%2FClasslikes%2F1859215268" anchor-label="Credentials" id="-736386860%2FClasslikes%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-credentials/index.html"><span><span>Credentials</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-736386860%2FClasslikes%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-credentials/index.html">Credentials</a></div><div class="brief "><p class="paragraph">Defines the type of credentials to be used for a login attempt. This allows the <code class="lang-kotlin">AuthenticationManager</code> to support multiple login strategies.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-349231129%2FClasslikes%2F1859215268" anchor-label="DeviceCodeCapable" id="-349231129%2FClasslikes%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-device-code-capable/index.html"><span>Device</span><wbr></wbr><span>Code</span><wbr></wbr><span><span>Capable</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-349231129%2FClasslikes%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-device-code-capable/index.html">DeviceCodeCapable</a></div><div class="brief "><p class="paragraph">Marker interface for contexts that support device code authentication flows. Platforms implementing this interface can display device codes and verification URLs to users.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1233059195%2FClasslikes%2F1859215268" anchor-label="InMemoryReplayCache" id="1233059195%2FClasslikes%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-in-memory-replay-cache/index.html"><span>In</span><wbr></wbr><span>Memory</span><wbr></wbr><span>Replay</span><wbr></wbr><span><span>Cache</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1233059195%2FClasslikes%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-in-memory-replay-cache/index.html">InMemoryReplayCache</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">maxAgeSeconds<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token operator"> = </span><span class="token constant">3600</span></span></span><span class="token punctuation">)</span> : <a href="-replay-attack-cache/index.html">ReplayAttackCache</a></div><div class="brief "><p class="paragraph">In-memory implementation of ReplayAttackCache for testing or scenarios where persistence is not required.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1094156168%2FClasslikes%2F-1299583642" anchor-label="iOSAuthContext" id="-1094156168%2FClasslikes%2F-1299583642" data-filterable-set=":srglogin-core/appleMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/appleMain" data-filterable-set=":srglogin-core/appleMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="i-o-s-auth-context/index.html"><span>i</span><wbr></wbr><span>OSAuth</span><wbr></wbr><span><span>Context</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1094156168%2FClasslikes%2F-1299583642"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":srglogin-core/appleMain" data-filterable-set=":srglogin-core/appleMain" data-active="" data-toggle=":srglogin-core/appleMain">apple</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/appleMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="i-o-s-auth-context/index.html">iOSAuthContext</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>platformType<span class="token operator">: </span><span data-unresolved-link="ch.srg.login.sdk.auth/PlatformType///PointingToDeclaration/">PlatformType</span><span class="token operator"> = </span>PlatformType.IOS<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>presentationContextProvider<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span> : <a href="-platform-auth-context/index.html">PlatformAuthContext</a>, <span data-unresolved-link="ch.srg.login.sdk.auth/WebAuthCapable///PointingToDeclaration/">WebAuthCapable</span></div><div class="brief "><p class="paragraph">iOS authentication context. Provides the necessary context for ASWebAuthenticationSession.</p></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1349195126%2FClasslikes%2F1859215268" anchor-label="LoginState" id="-1349195126%2FClasslikes%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-login-state/index.html"><span>Login</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1349195126%2FClasslikes%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-login-state/index.html">LoginState</a></div><div class="brief "><p class="paragraph">Represents the various states that can occur during a login flow. A login flow can emit multiple states over time, especially for complex flows like the device flow.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2125229173%2FClasslikes%2F1859215268" anchor-label="LogoutResult" id="-2125229173%2FClasslikes%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-logout-result/index.html"><span>Logout</span><wbr></wbr><span><span>Result</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2125229173%2FClasslikes%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-logout-result/index.html">LogoutResult</a></div><div class="brief "><p class="paragraph">Result of a logout operation indicating what was accomplished.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="229499086%2FClasslikes%2F1859215268" anchor-label="LogoutType" id="229499086%2FClasslikes%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-logout-type/index.html"><span>Logout</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="229499086%2FClasslikes%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-logout-type/index.html">LogoutType</a></div><div class="brief "><p class="paragraph">Represents different types of logout operations supported by the SDK.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="52821852%2FClasslikes%2F1063167284" anchor-label="PlatformAuthContext" id="52821852%2FClasslikes%2F1063167284" data-filterable-set=":srglogin-core/commonMain,:srglogin-core/androidMain,:srglogin-core/appleMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain,:srglogin-core/androidMain,:srglogin-core/appleMain" data-filterable-set=":srglogin-core/commonMain,:srglogin-core/androidMain,:srglogin-core/appleMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-platform-auth-context/index.html"><span>Platform</span><wbr></wbr><span>Auth</span><wbr></wbr><span><span>Context</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="52821852%2FClasslikes%2F1063167284"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":srglogin-core/androidMain" data-filterable-set=":srglogin-core/androidMain" data-active="" data-toggle=":srglogin-core/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":srglogin-core/appleMain" data-filterable-set=":srglogin-core/appleMain" data-toggle=":srglogin-core/appleMain">apple</button><button class="platform-bookmark" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain" data-toggle=":srglogin-core/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":srglogin-core/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">interface </span><a href="-platform-auth-context/index.html">PlatformAuthContext</a></div><div class="brief "><p class="paragraph">Android implementation of PlatformAuthContext.</p></div></div><div class="content sourceset-dependent-content" data-togglable=":srglogin-core/appleMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">interface </span><a href="-platform-auth-context/index.html">PlatformAuthContext</a></div><div class="brief "><p class="paragraph">iOS implementation of PlatformAuthContext.</p></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">interface </span><a href="-platform-auth-context/index.html">PlatformAuthContext</a></div><div class="brief "><p class="paragraph">Platform-specific authentication context interface. Each platform provides its own implementation with the necessary context information for authentication operations.</p></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1640531525%2FClasslikes%2F1859215268" anchor-label="PlatformType" id="1640531525%2FClasslikes%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-platform-type/index.html"><span>Platform</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1640531525%2FClasslikes%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-platform-type/index.html">PlatformType</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-platform-type/index.html">PlatformType</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Enumeration of supported platform types for authentication.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="573285565%2FClasslikes%2F1859215268" anchor-label="ReplayAttackCache" id="573285565%2FClasslikes%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-replay-attack-cache/index.html"><span>Replay</span><wbr></wbr><span>Attack</span><wbr></wbr><span><span>Cache</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="573285565%2FClasslikes%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-replay-attack-cache/index.html">ReplayAttackCache</a></div><div class="brief "><p class="paragraph">Interface for protecting against JWT replay attacks by tracking used JWT IDs. Essential security component for back-channel logout validation.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1103702274%2FClasslikes%2F1859215268" anchor-label="TokenManager" id="-1103702274%2FClasslikes%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-token-manager/index.html"><span>Token</span><wbr></wbr><span><span>Manager</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1103702274%2FClasslikes%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-token-manager/index.html">TokenManager</a></div><div class="brief "><p class="paragraph">Manages OAuth 2.0 token lifecycle including refresh, access, and state monitoring.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1124542182%2FClasslikes%2F1859215268" anchor-label="TokenState" id="-1124542182%2FClasslikes%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-token-state/index.html"><span>Token</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1124542182%2FClasslikes%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-token-state/index.html">TokenState</a></div><div class="brief "><p class="paragraph">Represents the current state of authentication tokens.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1596719311%2FClasslikes%2F-1299583642" anchor-label="TvOSAuthContext" id="1596719311%2FClasslikes%2F-1299583642" data-filterable-set=":srglogin-core/appleMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/appleMain" data-filterable-set=":srglogin-core/appleMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-tv-o-s-auth-context/index.html"><span>Tv</span><wbr></wbr><span>OSAuth</span><wbr></wbr><span><span>Context</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1596719311%2FClasslikes%2F-1299583642"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":srglogin-core/appleMain" data-filterable-set=":srglogin-core/appleMain" data-active="" data-toggle=":srglogin-core/appleMain">apple</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/appleMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-tv-o-s-auth-context/index.html">TvOSAuthContext</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>viewController<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>platformType<span class="token operator">: </span><span data-unresolved-link="ch.srg.login.sdk.auth/PlatformType///PointingToDeclaration/">PlatformType</span><span class="token operator"> = </span>PlatformType.TVOS<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>presentationContextProvider<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span> : <a href="-platform-auth-context/index.html">PlatformAuthContext</a>, <span data-unresolved-link="ch.srg.login.sdk.auth/TvPlatform///PointingToDeclaration/">TvPlatform</span></div><div class="brief "><p class="paragraph">tvOS (Apple TV) authentication context. Apple TV requires device code flow due to limited input capabilities.</p></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1745908925%2FClasslikes%2F1859215268" anchor-label="TvPlatform" id="1745908925%2FClasslikes%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-tv-platform/index.html"><span>Tv</span><wbr></wbr><span><span>Platform</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1745908925%2FClasslikes%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-tv-platform/index.html">TvPlatform</a> : <a href="-device-code-capable/index.html">DeviceCodeCapable</a></div><div class="brief "><p class="paragraph">Marker interface for TV and limited-input device contexts. These platforms typically require device code flow due to input limitations.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1314564162%2FClasslikes%2F1859215268" anchor-label="WebAuthCapable" id="1314564162%2FClasslikes%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-web-auth-capable/index.html"><span>Web</span><wbr></wbr><span>Auth</span><wbr></wbr><span><span>Capable</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1314564162%2FClasslikes%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-web-auth-capable/index.html">WebAuthCapable</a></div><div class="brief "><p class="paragraph">Marker interface for contexts that support web-based authentication flows. Platforms implementing this interface can use Chrome Custom Tabs, Safari, or similar browsers.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1093456339%2FClasslikes%2F1859215268" anchor-label="WebAuthenticator" id="1093456339%2FClasslikes%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-web-authenticator/index.html"><span>Web</span><wbr></wbr><span><span>Authenticator</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1093456339%2FClasslikes%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-web-authenticator/index.html">WebAuthenticator</a></div><div class="brief "><p class="paragraph">Defines the contract for a platform-specific authenticator that handles the browser flow.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© 2026 Copyright</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

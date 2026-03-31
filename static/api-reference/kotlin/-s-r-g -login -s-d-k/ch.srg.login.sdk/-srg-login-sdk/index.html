@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>SrgLoginSdk</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../../index.html" tabindex="1">
+                    SRG Login SDK
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+1.0.0-SNAPSHOT        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
+                        data-filter=":srglogin-core/appleMain">apple</button>
+                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
+                        data-filter=":srglogin-core/commonMain">common</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":srglogin-core/appleMain"
+                                       data-filter=":srglogin-core/appleMain"/>
+                                <span class="checkbox--icon"></span>
+                                apple
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":srglogin-core/commonMain"
+                                       data-filter=":srglogin-core/commonMain"/>
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    SRG Login SDK
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="SRG Login SDK::ch.srg.login.sdk/SrgLoginSdk///PointingToDeclaration//1859215268">
+  <div class="breadcrumbs"><a href="../../../index.html">SRG Login SDK</a><span class="delimiter">/</span><a href="../index.html">ch.srg.login.sdk</a><span class="delimiter">/</span><span class="current">SrgLoginSdk</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Srg</span><wbr></wbr><span>Login</span><wbr></wbr><span><span>Sdk</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="index.html">SrgLoginSdk</a></div><p class="paragraph">Public API for the SRG Login SDK.</p><p class="paragraph">This is the main entry point for SDK users to initialize the SDK and create <a href="../-srg-login/index.html">SrgLogin</a> instances for OAuth 2.0/OIDC authentication flows.</p><h2 class="">Quick Start</h2><h3 class="">Android</h3><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">class MyApplication : Application() {<br>    override fun onCreate() {<br>        super.onCreate()<br><br>        // Initialize SDK once at app startup<br>        SrgLoginSdk.initialize(<br>            platformContext = applicationContext,<br>            isDebugBuild = BuildConfig.DEBUG<br>        )<br>    }<br>}<br><br>// Later, create SDK instance with your OAuth configuration<br>val srgLogin = SrgLoginSdk.create(<br>    SrgLoginConfig(<br>        environment = Environment.PROD,<br>        clientId = &quot;your-client-id&quot;,<br>        redirectUri = &quot;your-app://callback&quot;<br>    )<br>)</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><h3 class="">iOS (Swift)</h3><div class="sample-container"><pre><code class="block lang-swift" theme="idea">@main<br>struct MyApp: App {<br>    init() {<br>        // Initialize SDK once at app startup<br>        SrgLoginSdk.shared.initialize(<br>            platformContext: nil,<br>            isDebugBuild: true<br>        )<br>    }<br>}<br><br>// Later, create SDK instance<br>let srgLogin = SrgLoginSdk.shared.create(<br>    config: SrgLoginConfig(<br>        environment: .prod,<br>        clientId: &quot;your-client-id&quot;,<br>        redirectUri: &quot;your-app://callback&quot;<br>    )<br>)</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><h2 class="">Architecture</h2><p class="paragraph">This class is a <strong>public facade</strong> that delegates to <span data-unresolved-link="ch.srg.login.sdk/SdkCore///PointingToDeclaration/">SdkCore</span> (internal implementation).</p><p class="paragraph"><strong>Why this separation?</strong></p><ul><li><p class="paragraph">✅ <strong>Clean API</strong>: Users don't see confusing internal parameters (e.g., Koin debug logging)</p></li><li><p class="paragraph">✅ <strong>Stability</strong>: Public API remains stable while internal implementation can evolve</p></li><li><p class="paragraph">✅ <strong>Testing</strong>: SDK developers can use <span data-unresolved-link="ch.srg.login.sdk/SdkCore///PointingToDeclaration/">SdkCore</span> directly in tests for fine-grained control</p></li><li><p class="paragraph">✅ <strong>Documentation</strong>: Focused documentation for each audience (users vs SDK developers)</p></li></ul><p class="paragraph"><strong>What's hidden from users?</strong></p><ul><li><p class="paragraph">Koin dependency injection debug logging (internal implementation detail)</p></li><li><p class="paragraph">Low-level DI container management</p></li><li><p class="paragraph">Internal SDK lifecycle details</p></li></ul><p class="paragraph"><strong>What's exposed to users?</strong></p><ul><li><p class="paragraph">Simple initialization API with minimal required parameters</p></li><li><p class="paragraph">SDK application logging control (<code class="lang-kotlin">isDebugBuild</code>)</p></li><li><p class="paragraph">Token storage configuration</p></li><li><p class="paragraph">Platform context (Android only)</p></li></ul><h2 class="">Logging Configuration</h2><p class="paragraph">The SDK provides structured logging through SdkLogger.</p><p class="paragraph"><strong>Debug Builds</strong> (<code class="lang-kotlin">isDebugBuild = true</code>):</p><ul><li><p class="paragraph"><strong>Log Level</strong>: DEBUG and above (VERBOSE, DEBUG, INFO, WARNING, ERROR, ASSERT)</p></li><li><p class="paragraph"><strong>Use Case</strong>: Development, troubleshooting OAuth flows, inspecting token lifecycle</p></li><li><p class="paragraph"><strong>Example</strong>: <code class="lang-kotlin">&quot;DEBUG [TOKEN_MONITORING] Token expires in 120 seconds&quot;</code></p></li></ul><p class="paragraph"><strong>Release Builds</strong> (<code class="lang-kotlin">isDebugBuild = false</code>):</p><ul><li><p class="paragraph"><strong>Log Level</strong>: INFO and above (INFO, WARNING, ERROR, ASSERT)</p></li><li><p class="paragraph"><strong>Use Case</strong>: Production, high-level events only</p></li><li><p class="paragraph"><strong>Example</strong>: <code class="lang-kotlin">&quot;INFO [AUTHENTICATION] Login completed successfully&quot;</code></p></li></ul><p class="paragraph"><strong>Recommendation</strong>: Pass your build configuration flag (e.g., <code class="lang-kotlin">BuildConfig.DEBUG</code> on Android).</p><h2 class="">Thread Safety</h2><ul><li><p class="paragraph"><a href="initialize.html">initialize</a> should be called once at app startup on the main thread</p></li><li><p class="paragraph"><a href="create.html">create</a> can be called from any thread (but typically main thread)</p></li><li><p class="paragraph">Multiple <a href="../-srg-login/index.html">SrgLogin</a> instances are supported and isolated from each other</p></li></ul><h2 class="">Platform Requirements</h2><h3 class="">Android</h3><ul><li><p class="paragraph"><strong>Required</strong>: <code class="lang-kotlin">platformContext</code> must be <code class="lang-kotlin">ApplicationContext</code></p></li><li><p class="paragraph"><strong>Minimum API</strong>: 21+ (Android 5.0 Lollipop)</p></li><li><p class="paragraph"><strong>Dependencies</strong>: Chrome Custom Tabs, Android Keystore</p></li></ul><h3 class="">iOS</h3><ul><li><p class="paragraph"><strong>Required</strong>: None (<code class="lang-kotlin">platformContext</code> can be <code class="lang-kotlin">null</code>)</p></li><li><p class="paragraph"><strong>Minimum Version</strong>: iOS 13.0+</p></li><li><p class="paragraph"><strong>Dependencies</strong>: ASWebAuthenticationSession, Keychain</p></li></ul><h3 class="">JVM</h3><ul><li><p class="paragraph"><strong>Required</strong>: None (<code class="lang-kotlin">platformContext</code> can be <code class="lang-kotlin">null</code>)</p></li><li><p class="paragraph"><strong>Minimum Version</strong>: JVM 11+</p></li><li><p class="paragraph"><strong>Dependencies</strong>: Platform-specific browser integration</p></li></ul><h3 class="">JavaScript</h3><ul><li><p class="paragraph"><strong>Required</strong>: None (<code class="lang-kotlin">platformContext</code> can be <code class="lang-kotlin">null</code>)</p></li><li><p class="paragraph"><strong>Minimum Version</strong>: ES2015+</p></li><li><p class="paragraph"><strong>Dependencies</strong>: Browser APIs</p></li></ul><span class="kdoc-tag"><h4 class="">Since</h4><p class="paragraph">1.0.0</p></span><h4 class="tableheader">See also</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><span data-unresolved-link="ch.srg.login.sdk/SdkCore///PointingToDeclaration/"><span>Sdk</span><wbr></wbr><span><span>Core</span></span></span></div></span></div><div><div class="title"><p class="paragraph">Internal implementation (SDK developers only)</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-srg-login/index.html"><span>Srg</span><wbr></wbr><span><span>Login</span></span></a></div></span></div><div><div class="title"><p class="paragraph">SDK instance for authentication operations</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-srg-login-config/index.html"><span>Srg</span><wbr></wbr><span>Login</span><wbr></wbr><span><span>Config</span></span></a></div></span></div><div><div class="title"><p class="paragraph">OAuth 2.0/OIDC configuration</p></div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION,EXTENSION_PROPERTY,EXTENSION_FUNCTION">Members &amp; Extensions</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="-1985856523%2FFunctions%2F1859215268" anchor-label="create" id="-1985856523%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="create.html"><span><span>create</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1985856523%2FFunctions%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="create.html"><span class="token function">create</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">config<span class="token operator">: </span><a href="../-srg-login-config/index.html">SrgLoginConfig</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-srg-login/index.html">SrgLogin</a></div><div class="brief "><p class="paragraph">Creates a new <a href="../-srg-login/index.html">SrgLogin</a> instance with the given OAuth 2.0/OIDC configuration.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1322064434%2FFunctions%2F1859215268" anchor-label="initialize" id="-1322064434%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="initialize.html"><span><span>initialize</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1322064434%2FFunctions%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="initialize.html"><span class="token function">initialize</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">tokenStorageConfig<span class="token operator">: </span><a href="../../ch.srg.login.sdk.token/-token-storage-config/index.html">TokenStorageConfig</a><span class="token operator"> = </span>TokenStorageConfig()<span class="token punctuation">, </span></span><span class="parameter ">platformContext<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">isDebugBuild<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Initializes the SDK with the given configuration.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2005632901%2FFunctions%2F-1299583642" anchor-label="initialize" id="-2005632901%2FFunctions%2F-1299583642" data-filterable-set=":srglogin-core/appleMain"></a>
+          <div class="table-row table-row_content" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":srglogin-core/appleMain" data-filterable-set=":srglogin-core/appleMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../initialize.html"><span><span>initialize</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2005632901%2FFunctions%2F-1299583642"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":srglogin-core/appleMain" data-filterable-set=":srglogin-core/appleMain" data-active="" data-toggle=":srglogin-core/appleMain">apple</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/appleMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="index.html#-1762479903%2FMain%2F-1299583642">SrgLoginSdk</a><span class="token punctuation">.</span><a href="../initialize.html"><span class="token function">initialize</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">tokenStorageConfig<span class="token operator">: </span><span data-unresolved-link="ch.srg.login.sdk.token/TokenStorageConfig///PointingToDeclaration/">TokenStorageConfig</span><span class="token operator"> = </span>TokenStorageConfig()<span class="token punctuation">, </span></span><span class="parameter ">isDebugBuild<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">iOS-friendly overload for <span data-unresolved-link="ch.srg.login.sdk/SrgLoginSdk/initialize/#ch.srg.login.sdk.token.TokenStorageConfig#kotlin.Any?#kotlin.Boolean/PointingToDeclaration/">SrgLoginSdk.initialize</span> that omits Android-only parameters.</p></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1955730258%2FFunctions%2F1859215268" anchor-label="isInitialized" id="1955730258%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-initialized.html"><span>is</span><wbr></wbr><span><span>Initialized</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1955730258%2FFunctions%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="is-initialized.html"><span class="token function">isInitialized</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Checks if the SDK has been initialized.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-655100120%2FFunctions%2F1859215268" anchor-label="shutdown" id="-655100120%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="shutdown.html"><span><span>shutdown</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-655100120%2FFunctions%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="shutdown.html"><span class="token function">shutdown</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Shuts down the SDK and releases all resources.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© 2026 Copyright</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

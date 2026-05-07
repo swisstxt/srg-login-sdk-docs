@@ -44,7 +44,7 @@
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">
-1.0.0-SNAPSHOT        </div>
+1.0.0-beta.12        </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
                 <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
@@ -108,24 +108,24 @@
   <div class="breadcrumbs"><a href="../../../index.html">SRG Login SDK</a><span class="delimiter">/</span><a href="../index.html">ch.srg.login.sdk.model</a><span class="delimiter">/</span><span class="current">TokenSet</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Token</span><wbr></wbr><span><span>Set</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">TokenSet</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>accessToken<span class="token operator">: </span><a href="../-access-token/index.html">AccessToken</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>refreshToken<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>idToken<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>tokenType<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;Bearer&quot;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>scope<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><p class="paragraph">Complete set of tokens from authentication or refresh.</p><p class="paragraph">This type represents the full OAuth 2.0/OIDC token response from the authorization server, with the access token parsed into a type-safe <a href="../-access-token/index.html">AccessToken</a> with JWT claims.</p><p class="paragraph">All properties are publicly accessible to SDK users.</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">TokenSet</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>accessToken<span class="token operator">: </span><a href="../-access-token/index.html">AccessToken</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>refreshToken<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>idToken<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>idTokenClaims<span class="token operator">: </span><a href="../-id-token-claims/index.html">IdTokenClaims</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>tokenType<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;Bearer&quot;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>scopes<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()</span></span><span class="token punctuation">)</span></div><p class="paragraph">Public token result from authentication.</p><p class="paragraph">Represents the consumer-facing OAuth 2.0/OIDC token response, with the access token parsed into a type-safe <a href="../-access-token/index.html">AccessToken</a> and (when an OIDC <code class="lang-kotlin">openid</code> scope was granted) the ID token claims exposed via <span data-unresolved-link="ch.srg.login.sdk.model/TokenSet//#ch.srg.login.sdk.model.AccessToken#kotlin.String?#kotlin.String?#ch.srg.login.sdk.model.IdTokenClaims?#kotlin.String#kotlin.collections.List[kotlin.String]/PointingToCallableParameters(3)/">idTokenClaims</span>.</p><p class="paragraph">Returned via <a href="../../ch.srg.login.sdk.auth/-login-state/-success/index.html">ch.srg.login.sdk.auth.LoginState.Success</a> after a successful login. <strong>Not</strong> exposed via <a href="../../ch.srg.login.sdk.auth/-token-state/index.html">ch.srg.login.sdk.auth.TokenState</a> (the observable StateFlow) — <code class="lang-kotlin">TokenState.Refreshed</code> is a <code class="lang-kotlin">data object</code> signal with no payload, keeping the refresh token out of the observable stream.</p></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
       <div data-togglable="CONSTRUCTOR">
         <h2 class="tableheader">Constructors</h2>
-        <div class="table"><a data-name="-2063903067%2FConstructors%2F1859215268" anchor-label="TokenSet" id="-2063903067%2FConstructors%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+        <div class="table"><a data-name="-109462396%2FConstructors%2F1859215268" anchor-label="TokenSet" id="-109462396%2FConstructors%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
           <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-token-set.html"><span>Token</span><wbr></wbr><span><span>Set</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2063903067%2FConstructors%2F1859215268"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-109462396%2FConstructors%2F1859215268"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessToken<span class="token operator">: </span><a href="../-access-token/index.html">AccessToken</a><span class="token punctuation">, </span></span><span class="parameter ">refreshToken<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">idToken<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">tokenType<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;Bearer&quot;</span><span class="token punctuation">, </span></span><span class="parameter ">scope<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessToken<span class="token operator">: </span><a href="../-access-token/index.html">AccessToken</a><span class="token punctuation">, </span></span><span class="parameter ">refreshToken<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">idToken<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">idTokenClaims<span class="token operator">: </span><a href="../-id-token-claims/index.html">IdTokenClaims</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">tokenType<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;Bearer&quot;</span><span class="token punctuation">, </span></span><span class="parameter ">scopes<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()</span></span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -163,7 +163,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="access-token.html">accessToken</a><span class="token operator">: </span><a href="../-access-token/index.html">AccessToken</a></div><div class="brief "><p class="paragraph">Access token with parsed JWT claims</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="access-token.html">accessToken</a><span class="token operator">: </span><a href="../-access-token/index.html">AccessToken</a></div><div class="brief "><p class="paragraph">Access token with parsed JWT claims.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -178,7 +178,22 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="id-token.html">idToken</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">OIDC ID token (null if not provided or not using OIDC)</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="id-token.html">idToken</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Raw OIDC ID token JWT string (null if not provided or not using OIDC). Useful for debugging or transmitting to a backend that re-validates. For consumer logic, prefer the typed <span data-unresolved-link="ch.srg.login.sdk.model/TokenSet//#ch.srg.login.sdk.model.AccessToken#kotlin.String?#kotlin.String?#ch.srg.login.sdk.model.IdTokenClaims?#kotlin.String#kotlin.collections.List[kotlin.String]/PointingToCallableParameters(3)/">idTokenClaims</span> which is only populated after the SDK has cryptographically validated the JWT (signature, iss, aud, exp, nonce, azp).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1122733440%2FProperties%2F1859215268" anchor-label="idTokenClaims" id="-1122733440%2FProperties%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="id-token-claims.html"><span>id</span><wbr></wbr><span>Token</span><wbr></wbr><span><span>Claims</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1122733440%2FProperties%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="id-token-claims.html">idTokenClaims</a><span class="token operator">: </span><a href="../-id-token-claims/index.html">IdTokenClaims</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Parsed and validated ID token claims. The presence of this object is a proof that the SDK has fully validated the ID token — consumers can trust the values without re-parsing the JWT.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -193,22 +208,22 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="refresh-token.html">refreshToken</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Refresh token for obtaining new access tokens (null if not provided by server)</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="refresh-token.html">refreshToken</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Refresh token for obtaining new access tokens (null if not provided by the IDP, e.g. when <code class="lang-kotlin">offline_access</code> scope was not requested). <strong>Security</strong>: Never log, persist outside secure storage, or transmit off-device.</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-638658559%2FProperties%2F1859215268" anchor-label="scope" id="-638658559%2FProperties%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+<a data-name="-1052291354%2FProperties%2F1859215268" anchor-label="scopes" id="-1052291354%2FProperties%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
           <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="scope.html"><span><span>scope</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-638658559%2FProperties%2F1859215268"></span>
+                  <div><a href="scopes.html"><span><span>scopes</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1052291354%2FProperties%2F1859215268"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="scope.html">scope</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">OAuth scopes granted (space-separated string)</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="scopes.html">scopes</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">OAuth scopes granted by the IDP. Use <a href="has-scope.html">hasScope</a> to check whether a specific scope was granted. Empty list means the IDP did not return a scope claim.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -223,7 +238,26 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="token-type.html">tokenType</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">Token type, typically &quot;Bearer&quot;</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="token-type.html">tokenType</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">Token type, typically &quot;Bearer&quot;.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="-1239941927%2FFunctions%2F1859215268" anchor-label="hasScope" id="-1239941927%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-scope.html"><span>has</span><wbr></wbr><span><span>Scope</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1239941927%2FFunctions%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="has-scope.html"><span class="token function">hasScope</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">scope<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns <code class="lang-kotlin">true</code> if <a href="has-scope.html">scope</a> is in <span data-unresolved-link="ch.srg.login.sdk.model/TokenSet//#ch.srg.login.sdk.model.AccessToken#kotlin.String?#kotlin.String?#ch.srg.login.sdk.model.IdTokenClaims?#kotlin.String#kotlin.collections.List[kotlin.String]/PointingToCallableParameters(5)/">scopes</span> (i.e. was granted by the IDP).</p></div></div></div>
                 </div>
               </div>
             </div>

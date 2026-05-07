@@ -44,7 +44,7 @@
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">
-1.0.0-SNAPSHOT        </div>
+1.0.0-beta.12        </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
                 <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
@@ -115,17 +115,32 @@
     <div class="tabs-section-body">
       <div data-togglable="FUNCTION">
         <h2 class="tableheader">Functions</h2>
-        <div class="table"><a data-name="-1749903783%2FFunctions%2F1859215268" anchor-label="getAccessToken" id="-1749903783%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+        <div class="table"><a data-name="-1448612386%2FFunctions%2F1859215268" anchor-label="getAccessToken" id="-1448612386%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
           <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="get-access-token.html"><span>get</span><wbr></wbr><span>Access</span><wbr></wbr><span><span>Token</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1749903783%2FFunctions%2F1859215268"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1448612386%2FFunctions%2F1859215268"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="get-access-token.html"><span class="token function">getAccessToken</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../ch.srg.login.sdk.result/-sdk-result/index.html">SdkResult</a><span class="token operator">&lt;</span><a href="../../ch.srg.login.sdk.model/-access-token/index.html">AccessToken</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Gets a valid access token with parsed JWT claims, automatically refreshing if expired and proactive refresh is enabled.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="get-access-token.html"><span class="token function">getAccessToken</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">forceRefresh<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../ch.srg.login.sdk.result/-sdk-result/index.html">SdkResult</a><span class="token operator">&lt;</span><a href="../../ch.srg.login.sdk.model/-access-token/index.html">AccessToken</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Returns a valid access token, refreshing internally if needed.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="755029966%2FFunctions%2F1859215268" anchor-label="getRefreshToken" id="755029966%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-refresh-token.html"><span>get</span><wbr></wbr><span>Refresh</span><wbr></wbr><span><span>Token</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="755029966%2FFunctions%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="get-refresh-token.html"><span class="token function">getRefreshToken</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Returns the raw refresh token string from secure storage, or <code class="lang-kotlin">null</code> if none exists.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -175,32 +190,32 @@
               </div>
             </div>
           </div>
-<a data-name="1630778882%2FFunctions%2F1859215268" anchor-label="login" id="1630778882%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+<a data-name="1391573936%2FFunctions%2F1859215268" anchor-label="login" id="1391573936%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
           <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="login.html"><span><span>login</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1630778882%2FFunctions%2F1859215268"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1391573936%2FFunctions%2F1859215268"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="login.html"><span class="token function">login</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">credentials<span class="token operator">: </span><a href="../../ch.srg.login.sdk.auth/-credentials/index.html">Credentials</a><span class="token punctuation">, </span></span><span class="parameter ">authContext<span class="token operator">: </span><a href="../../ch.srg.login.sdk.auth/-platform-auth-context/index.html">PlatformAuthContext</a><span class="token punctuation">, </span></span><span class="parameter ">additionalScopes<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()<span class="token punctuation">, </span></span><span class="parameter ">additionalParameters<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyMap()</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><a href="../../ch.srg.login.sdk.auth/-login-state/index.html">LoginState</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Initiates a login flow with the specified credentials and authentication context.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="login.html"><span class="token function">login</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">loginMethod<span class="token operator">: </span><a href="../../ch.srg.login.sdk.auth/-login-method/index.html">LoginMethod</a><span class="token punctuation">, </span></span><span class="parameter ">authContext<span class="token operator">: </span><a href="../../ch.srg.login.sdk.auth/-platform-auth-context/index.html">PlatformAuthContext</a><span class="token punctuation">, </span></span><span class="parameter ">additionalScopes<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()<span class="token punctuation">, </span></span><span class="parameter ">additionalParameters<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyMap()</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><a href="../../ch.srg.login.sdk.auth/-login-state/index.html">LoginState</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Initiates a login flow with the specified credentials and authentication context.</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-1997333439%2FFunctions%2F1859215268" anchor-label="logout" id="-1997333439%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+<a data-name="1103209900%2FFunctions%2F1859215268" anchor-label="logout" id="1103209900%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
           <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="logout.html"><span><span>logout</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1997333439%2FFunctions%2F1859215268"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1103209900%2FFunctions%2F1859215268"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="logout.html"><span class="token function">logout</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../ch.srg.login.sdk.result/-sdk-result/index.html">SdkResult</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Logs the user out locally by clearing stored tokens. This is equivalent to logout(LogoutType.LocalOnly).</p></div><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="logout.html"><span class="token function">logout</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">logoutType<span class="token operator">: </span><a href="../../ch.srg.login.sdk.auth/-logout-type/index.html">LogoutType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../ch.srg.login.sdk.auth/-logout-result/index.html">LogoutResult</a></div><div class="brief "><p class="paragraph">Logs the user out using the specified logout type.</p></div><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="logout.html"><span class="token function">logout</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">logoutType<span class="token operator">: </span><a href="../../ch.srg.login.sdk.auth/-logout-type/index.html">LogoutType</a><span class="token punctuation">, </span></span><span class="parameter ">authContext<span class="token operator">: </span><a href="../../ch.srg.login.sdk.auth/-platform-auth-context/index.html">PlatformAuthContext</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../ch.srg.login.sdk.auth/-logout-result/index.html">LogoutResult</a></div><div class="brief "><p class="paragraph">Logs the user out using the specified logout type with platform context.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="logout.html"><span class="token function">logout</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">logoutType<span class="token operator">: </span><a href="../../ch.srg.login.sdk.auth/-logout-type/index.html">LogoutType</a><span class="token operator"> = </span>LogoutType.LocalOnly</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../ch.srg.login.sdk.auth/-logout-result/index.html">LogoutResult</a></div><div class="brief "><p class="paragraph">Logs the user out using the specified logout type.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -220,32 +235,17 @@
               </div>
             </div>
           </div>
-<a data-name="-45594998%2FFunctions%2F1859215268" anchor-label="openSsoClient" id="-45594998%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+<a data-name="-587706625%2FFunctions%2F1859215268" anchor-label="openSsoClient" id="-587706625%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
           <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="open-sso-client.html"><span>open</span><wbr></wbr><span>Sso</span><wbr></wbr><span><span>Client</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-45594998%2FFunctions%2F1859215268"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-587706625%2FFunctions%2F1859215268"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="open-sso-client.html"><span class="token function">openSsoClient</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">ssoClientUrl<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">authContext<span class="token operator">: </span><a href="../../ch.srg.login.sdk.auth/-platform-auth-context/index.html">PlatformAuthContext</a><span class="token punctuation">, </span></span><span class="parameter ">onReturnCallback<span class="token operator">: </span><span class="token punctuation">(</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../ch.srg.login.sdk.result/-sdk-result/index.html">SdkResult</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Opens another SSO client URL in platform-specific browser, leveraging the current authenticated session cookies.</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="1105943514%2FFunctions%2F1859215268" anchor-label="refreshToken" id="1105943514%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
-          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="refresh-token.html"><span>refresh</span><wbr></wbr><span><span>Token</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1105943514%2FFunctions%2F1859215268"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="refresh-token.html"><span class="token function">refreshToken</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../ch.srg.login.sdk.result/-sdk-result/index.html">SdkResult</a><span class="token operator">&lt;</span><a href="../../ch.srg.login.sdk.model/-token-set/index.html">TokenSet</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Manually refreshes the access token using the refresh token.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="open-sso-client.html"><span class="token function">openSsoClient</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">ssoClientUrl<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">authContext<span class="token operator">: </span><a href="../../ch.srg.login.sdk.auth/-platform-auth-context/index.html">PlatformAuthContext</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../ch.srg.login.sdk.result/-sdk-result/index.html">SdkResult</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Opens another SSO client URL in platform-specific browser, leveraging the current authenticated session cookies.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -260,7 +260,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="register-back-channel-logout-listener.html"><span class="token function">registerBackChannelLogoutListener</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><a href="../../ch.srg.login.sdk.auth/-back-channel-logout-listener/index.html">BackChannelLogoutListener</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Registers a listener for back-channel logout notifications.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="register-back-channel-logout-listener.html"><span class="token function">registerBackChannelLogoutListener</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><a href="../../ch.srg.login.sdk.auth/-back-channel-logout-listener/index.html">BackChannelLogoutListener</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../ch.srg.login.sdk.result/-sdk-result/index.html">SdkResult</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Registers a listener for back-channel logout notifications.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -275,7 +275,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="unregister-back-channel-logout-listener.html"><span class="token function">unregisterBackChannelLogoutListener</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><a href="../../ch.srg.login.sdk.auth/-back-channel-logout-listener/index.html">BackChannelLogoutListener</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Unregisters a back-channel logout listener.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="unregister-back-channel-logout-listener.html"><span class="token function">unregisterBackChannelLogoutListener</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><a href="../../ch.srg.login.sdk.auth/-back-channel-logout-listener/index.html">BackChannelLogoutListener</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../ch.srg.login.sdk.result/-sdk-result/index.html">SdkResult</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Unregisters a back-channel logout listener.</p></div></div></div>
                 </div>
               </div>
             </div>

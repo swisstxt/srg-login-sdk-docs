@@ -44,7 +44,7 @@
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">
-1.0.0-SNAPSHOT        </div>
+1.0.0-beta.12        </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
                 <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
@@ -108,50 +108,11 @@
   <div class="breadcrumbs"><a href="../../../../index.html">SRG Login SDK</a><span class="delimiter">/</span><a href="../../index.html">ch.srg.login.sdk.auth</a><span class="delimiter">/</span><a href="../index.html">TokenState</a><span class="delimiter">/</span><span class="current">Refreshed</span></div>
   <div class="cover ">
     <h1 class="cover"><span><span>Refreshed</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">Refreshed</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>tokenSet<span class="token operator">: </span><a href="../../../ch.srg.login.sdk.model/-token-set/index.html">TokenSet</a></span></span><span class="token punctuation">)</span> : <a href="../index.html">TokenState</a></div><p class="paragraph">Token refresh succeeded with new tokens.</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">object </span><a href="index.html">Refreshed</a> : <a href="../index.html">TokenState</a></div><p class="paragraph">Token refresh succeeded — fresh tokens are now available in storage.</p><p class="paragraph">This is a <strong>signal</strong>, not a data carrier. To obtain the new access token, call <code class="lang-kotlin">getAccessToken()</code> — the single canonical path for token access in both <code class="lang-kotlin">Automatic</code> and <code class="lang-kotlin">Manual</code> modes. This is consistent with <a href="../-valid/index.html">Valid</a>, <a href="../-expiring-soon/index.html">ExpiringSoon</a>, and all other states that carry no token payload.</p><p class="paragraph">The raw refresh token is never exposed through the observable StateFlow to prevent accidental leakage via logging, analytics, or crash reports. (PR #71 review #7, team decision 2026-04-16)</p></div></div>
   </div>
   <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
-    <div class="tabs-section-body">
-      <div data-togglable="CONSTRUCTOR">
-        <h2 class="tableheader">Constructors</h2>
-        <div class="table"><a data-name="246030365%2FConstructors%2F1859215268" anchor-label="Refreshed" id="246030365%2FConstructors%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
-          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="-refreshed.html"><span><span>Refreshed</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="246030365%2FConstructors%2F1859215268"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">tokenSet<span class="token operator">: </span><a href="../../../ch.srg.login.sdk.model/-token-set/index.html">TokenSet</a></span></span><span class="token punctuation">)</span></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div data-togglable="PROPERTY">
-        <h2 class="tableheader">Properties</h2>
-        <div class="table"><a data-name="-2072321656%2FProperties%2F1859215268" anchor-label="tokenSet" id="-2072321656%2FProperties%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
-          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="token-set.html"><span>token</span><wbr></wbr><span><span>Set</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2072321656%2FProperties%2F1859215268"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="token-set.html">tokenSet</a><span class="token operator">: </span><a href="../../../ch.srg.login.sdk.model/-token-set/index.html">TokenSet</a></div><div class="brief "><p class="paragraph">The new token set with fresh tokens and parsed AccessToken</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="tabs-section" tabs-section="tabs-section"></div>
+    <div class="tabs-section-body"></div>
   </div>
 </div>
     <div class="footer">

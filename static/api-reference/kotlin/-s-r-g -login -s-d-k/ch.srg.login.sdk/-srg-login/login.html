@@ -44,7 +44,7 @@
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">
-1.0.0-SNAPSHOT        </div>
+1.0.0-beta.12        </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
                 <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
@@ -104,12 +104,12 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="member" id="content" pageIds="SRG Login SDK::ch.srg.login.sdk/SrgLogin/login/#ch.srg.login.sdk.auth.Credentials#ch.srg.login.sdk.auth.PlatformAuthContext#kotlin.collections.List[kotlin.String]#kotlin.collections.Map[kotlin.String,kotlin.String]/PointingToDeclaration//1859215268">
+<div class="main-content" data-page-type="member" id="content" pageIds="SRG Login SDK::ch.srg.login.sdk/SrgLogin/login/#ch.srg.login.sdk.auth.LoginMethod#ch.srg.login.sdk.auth.PlatformAuthContext#kotlin.collections.List[kotlin.String]#kotlin.collections.Map[kotlin.String,kotlin.String]/PointingToDeclaration//1859215268">
   <div class="breadcrumbs"><a href="../../../index.html">SRG Login SDK</a><span class="delimiter">/</span><a href="../index.html">ch.srg.login.sdk</a><span class="delimiter">/</span><a href="index.html">SrgLogin</a><span class="delimiter">/</span><span class="current">login</span></div>
   <div class="cover ">
     <h1 class="cover"><span><span>login</span></span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="login.html"><span class="token function">login</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">credentials<span class="token operator">: </span><a href="../../ch.srg.login.sdk.auth/-credentials/index.html">Credentials</a><span class="token punctuation">, </span></span><span class="parameter ">authContext<span class="token operator">: </span><a href="../../ch.srg.login.sdk.auth/-platform-auth-context/index.html">PlatformAuthContext</a><span class="token punctuation">, </span></span><span class="parameter ">additionalScopes<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()<span class="token punctuation">, </span></span><span class="parameter ">additionalParameters<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyMap()</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><a href="../../ch.srg.login.sdk.auth/-login-state/index.html">LoginState</a><span class="token operator">&gt;</span></div><p class="paragraph">Initiates a login flow with the specified credentials and authentication context.</p><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph">A <span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span> that emits <a href="../../ch.srg.login.sdk.auth/-login-state/index.html">LoginState</a> updates throughout the login process.</p></span><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>credentials</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The type of credentials to use for login (e.g., Web, Device, Biometric).</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>auth</span><wbr></wbr><span><span>Context</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The platform-specific authentication context.</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>additional</span><wbr></wbr><span><span>Scopes</span></span></u></div></span></div><div><div class="title"><p class="paragraph">Additional OAuth scopes to request (e.g., &quot;offline_access&quot;, &quot;profile&quot;, &quot;email&quot;).     The &quot;openid&quot; scope is automatically included for OIDC compliance.     Default: empty list (only &quot;openid&quot; will be requested).</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">**Common scopes**:
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="login.html"><span class="token function">login</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">loginMethod<span class="token operator">: </span><a href="../../ch.srg.login.sdk.auth/-login-method/index.html">LoginMethod</a><span class="token punctuation">, </span></span><span class="parameter ">authContext<span class="token operator">: </span><a href="../../ch.srg.login.sdk.auth/-platform-auth-context/index.html">PlatformAuthContext</a><span class="token punctuation">, </span></span><span class="parameter ">additionalScopes<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()<span class="token punctuation">, </span></span><span class="parameter ">additionalParameters<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyMap()</span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><a href="../../ch.srg.login.sdk.auth/-login-state/index.html">LoginState</a><span class="token operator">&gt;</span></div><p class="paragraph">Initiates a login flow with the specified credentials and authentication context.</p><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph">A <span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span> that emits <a href="../../ch.srg.login.sdk.auth/-login-state/index.html">LoginState</a> updates throughout the login process.</p></span><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>login</span><wbr></wbr><span><span>Method</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The login flow to use (e.g., Web, Device, UserPassword).</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>auth</span><wbr></wbr><span><span>Context</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The platform-specific authentication context.</p></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>additional</span><wbr></wbr><span><span>Scopes</span></span></u></div></span></div><div><div class="title"><p class="paragraph">Additional OAuth scopes to request (e.g., &quot;offline_access&quot;, &quot;profile&quot;, &quot;email&quot;).     The &quot;openid&quot; scope is automatically included for OIDC compliance.     Default: empty list (only &quot;openid&quot; will be requested).</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">**Common scopes**:
 - `&quot;offline_access&quot;`: Request a refresh token for token renewal
 - `&quot;profile&quot;`: Access user's profile information (name, picture, etc.)
 - `&quot;email&quot;`: Access user's email address
@@ -118,14 +118,14 @@
 ```kotlin
 // Login with refresh token support
 srgLogin.login(
-    credentials = Credentials.Web,
+    loginMethod = LoginMethod.Web,
     authContext = authContext,
     additionalScopes = listOf(&quot;offline_access&quot;, &quot;profile&quot;, &quot;email&quot;)
 )
 
 // Minimal login (only authentication)
 srgLogin.login(
-    credentials = Credentials.Web,
+    loginMethod = LoginMethod.Web,
     authContext = authContext
 ) // Only &quot;openid&quot; scope will be requested
 ```</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div></div></div></div></div><div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>additional</span><wbr></wbr><span><span>Parameters</span></span></u></div></span></div><div><div class="title"><p class="paragraph">Additional OAuth/OIDC parameters to customize the authentication flow.     All values are automatically URL-encoded.     Default: empty map (no additional parameters).</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">**Common OAuth 2.0/OIDC parameters**
@@ -149,21 +149,21 @@ srgLogin.login(
 ```kotlin
 // Force French UI
 srgLogin.login(
-    credentials = Credentials.Web,
+    loginMethod = LoginMethod.Web,
     authContext = authContext,
     additionalParameters = mapOf(&quot;ui_locales&quot; to &quot;fr&quot;)
 )
 
 // Force re-authentication
 srgLogin.login(
-    credentials = Credentials.Web,
+    loginMethod = LoginMethod.Web,
     authContext = authContext,
     additionalParameters = mapOf(&quot;prompt&quot; to &quot;login&quot;)
 )
 
 // Pre-fill username and force consent
 srgLogin.login(
-    credentials = Credentials.Web,
+    loginMethod = LoginMethod.Web,
     authContext = authContext,
     additionalParameters = mapOf(
         &quot;login_hint&quot; to &quot;user@example.com&quot;,
@@ -173,7 +173,7 @@ srgLogin.login(
 
 // Multi-language support with max authentication age
 srgLogin.login(
-    credentials = Credentials.Web,
+    loginMethod = LoginMethod.Web,
     authContext = authContext,
     additionalScopes = listOf(&quot;offline_access&quot;, &quot;profile&quot;),
     additionalParameters = mapOf(

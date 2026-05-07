@@ -39,6 +39,14 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Upgrades',
+      items: [
+        'upgrades/index',
+        'upgrades/v1.0.0-beta.12',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Migration',
       items: [
         'migration/index',

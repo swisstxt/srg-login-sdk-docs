@@ -44,7 +44,7 @@
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">
-1.0.0-beta.12        </div>
+1.0.0-beta.13        </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
                 <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
@@ -109,7 +109,7 @@
   <div class="cover ">
     <h1 class="cover"><span>raw</span><wbr></wbr><span><span>Claims</span></span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="raw-claims.html">rawClaims</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="../-claim-value/index.html">ClaimValue</a><span class="token operator">&gt;</span></div><p class="paragraph">IDP-specific or non-standard claims preserved as <a href="../-claim-value/index.html">ClaimValue</a> (lossless, platform-agnostic). Standard OIDC claims are pulled out into the typed properties above; only the residual claims appear here. Use <a href="get-string-claim.html">getStringClaim</a>, <a href="get-long-claim.html">getLongClaim</a>, <a href="get-boolean-claim.html">getBooleanClaim</a>, <a href="get-string-list-claim.html">getStringListClaim</a>, <a href="get-object-claim.html">getObjectClaim</a>, <a href="get-array-claim.html">getArrayClaim</a>, or <a href="has-custom-claim.html">hasCustomClaim</a> for typed access.</p></div></div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="raw-claims.html">rawClaims</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="../-claim-value/index.html">ClaimValue</a><span class="token operator">&gt;</span></div><p class="paragraph">IDP-specific or non-standard claims preserved as <a href="../-claim-value/index.html">ClaimValue</a> (lossless, platform-agnostic). Standard OIDC §2 ID Token claims and §5.1 profile claims (the latter typed on <a href="../-user-info/index.html">UserInfo</a>) are filtered out here so consumers see them in exactly one place. Access via the typed accessors inherited from <a href="../-claim-container/index.html">ClaimContainer</a>.</p></div></div>
 </div>
     <div class="footer">
         <div class="footer--container">

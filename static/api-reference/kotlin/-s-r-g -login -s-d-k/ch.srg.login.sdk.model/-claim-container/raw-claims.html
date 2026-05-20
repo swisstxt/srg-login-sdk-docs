@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>locale</title>
+    <title>rawClaims</title>
     <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
         <script>var pathToRoot = "../../../";</script>
     <script>document.documentElement.classList.replace("no-js", "js");</script>
@@ -44,7 +44,7 @@
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">
-1.0.0-beta.12        </div>
+1.0.0-beta.13        </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
                 <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
@@ -104,12 +104,12 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="member" id="content" pageIds="SRG Login SDK::ch.srg.login.sdk.model/IdTokenClaims/locale/#/PointingToDeclaration//1859215268">
-  <div class="breadcrumbs"><a href="../../../index.html">SRG Login SDK</a><span class="delimiter">/</span><a href="../index.html">ch.srg.login.sdk.model</a><span class="delimiter">/</span><a href="index.html">IdTokenClaims</a><span class="delimiter">/</span><span class="current">locale</span></div>
+<div class="main-content" data-page-type="member" id="content" pageIds="SRG Login SDK::ch.srg.login.sdk.model/ClaimContainer/rawClaims/#/PointingToDeclaration//1859215268">
+  <div class="breadcrumbs"><a href="../../../index.html">SRG Login SDK</a><span class="delimiter">/</span><a href="../index.html">ch.srg.login.sdk.model</a><span class="delimiter">/</span><a href="index.html">ClaimContainer</a><span class="delimiter">/</span><span class="current">rawClaims</span></div>
   <div class="cover ">
-    <h1 class="cover"><span><span>locale</span></span></h1>
+    <h1 class="cover"><span>raw</span><wbr></wbr><span><span>Claims</span></span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="locale.html">locale</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><p class="paragraph">End-User's locale (<code class="lang-kotlin">locale</code> claim) as a BCP47 language tag (e.g. <code class="lang-kotlin">fr-CH</code>). Granted by <code class="lang-kotlin">profile</code> scope.</p></div></div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="raw-claims.html">rawClaims</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="../-claim-value/index.html">ClaimValue</a><span class="token operator">&gt;</span></div><p class="paragraph">IDP-specific or non-standard claims preserved as <a href="../-claim-value/index.html">ClaimValue</a> (lossless, platform-agnostic). Standard OIDC typed claims are filtered out by the SDK so consumers see each claim in exactly one place — either as a typed property on the implementing type, or here.</p></div></div>
 </div>
     <div class="footer">
         <div class="footer--container">

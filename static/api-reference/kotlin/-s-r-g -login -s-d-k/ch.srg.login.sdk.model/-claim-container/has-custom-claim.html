@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>getBooleanClaim</title>
+    <title>hasCustomClaim</title>
     <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
         <script>var pathToRoot = "../../../";</script>
     <script>document.documentElement.classList.replace("no-js", "js");</script>
@@ -44,7 +44,7 @@
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">
-1.0.0-beta.12        </div>
+1.0.0-beta.13        </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
                 <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
@@ -104,12 +104,12 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="member" id="content" pageIds="SRG Login SDK::ch.srg.login.sdk.model/IdTokenClaims/getBooleanClaim/#kotlin.String/PointingToDeclaration//1859215268">
-  <div class="breadcrumbs"><a href="../../../index.html">SRG Login SDK</a><span class="delimiter">/</span><a href="../index.html">ch.srg.login.sdk.model</a><span class="delimiter">/</span><a href="index.html">IdTokenClaims</a><span class="delimiter">/</span><span class="current">getBooleanClaim</span></div>
+<div class="main-content" data-page-type="member" id="content" pageIds="SRG Login SDK::ch.srg.login.sdk.model/ClaimContainer/hasCustomClaim/#kotlin.String/PointingToDeclaration//1859215268">
+  <div class="breadcrumbs"><a href="../../../index.html">SRG Login SDK</a><span class="delimiter">/</span><a href="../index.html">ch.srg.login.sdk.model</a><span class="delimiter">/</span><a href="index.html">ClaimContainer</a><span class="delimiter">/</span><span class="current">hasCustomClaim</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>get</span><wbr></wbr><span>Boolean</span><wbr></wbr><span><span>Claim</span></span></h1>
+    <h1 class="cover"><span>has</span><wbr></wbr><span>Custom</span><wbr></wbr><span><span>Claim</span></span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="get-boolean-claim.html"><span class="token function">getBooleanClaim</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">?</span></div><p class="paragraph">Returns the boolean value of a JSON boolean claim, or <code class="lang-kotlin">null</code> if the claim is absent or not a JSON boolean. JSON strings (even if they look like <code class="lang-kotlin">&quot;true&quot;</code> / <code class="lang-kotlin">&quot;false&quot;</code>) return <code class="lang-kotlin">null</code> — strict type check.</p></div></div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="has-custom-claim.html"><span class="token function">hasCustomClaim</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><p class="paragraph">Returns <code class="lang-kotlin">true</code> if <a href="has-custom-claim.html">name</a> is present in <a href="raw-claims.html">rawClaims</a> (i.e. is a non-standard / IDP-specific claim), regardless of its value type (including <a href="../-claim-value/-null/index.html">ClaimValue.Null</a>).</p><p class="paragraph"><strong>Standard OIDC claims are NOT covered by this function</strong> — they are exposed as typed properties on the implementing type and removed from <a href="raw-claims.html">rawClaims</a> to avoid duplication.</p></div></div>
 </div>
     <div class="footer">
         <div class="footer--container">

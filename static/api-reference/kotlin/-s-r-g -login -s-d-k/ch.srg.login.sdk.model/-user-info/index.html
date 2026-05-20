@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>UserInfo</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../../index.html" tabindex="1">
+                    SRG Login SDK
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+1.0.0-beta.13        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
+                        data-filter=":srglogin-core/commonMain">common</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":srglogin-core/commonMain"
+                                       data-filter=":srglogin-core/commonMain"/>
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    SRG Login SDK
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="SRG Login SDK::ch.srg.login.sdk.model/UserInfo///PointingToDeclaration//1859215268">
+  <div class="breadcrumbs"><a href="../../../index.html">SRG Login SDK</a><span class="delimiter">/</span><a href="../index.html">ch.srg.login.sdk.model</a><span class="delimiter">/</span><span class="current">UserInfo</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>User</span><wbr></wbr><span><span>Info</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">UserInfo</a> : <a href="../-claim-container/index.html">ClaimContainer</a></div><p class="paragraph">End-User profile information (OIDC Core 1.0 §5.1 Standard Claims, plus phone scope).</p><p class="paragraph">Represents the <strong>current profile state</strong> of the authenticated user, as exposed by the IdP. Unlike <a href="../-id-token-claims/index.html">IdTokenClaims</a> — which is a snapshot of auth-proof claims at the moment of login (<code class="lang-kotlin">iss</code>, <code class="lang-kotlin">aud</code>, <code class="lang-kotlin">exp</code>, <code class="lang-kotlin">nonce</code>, <code class="lang-kotlin">azp</code>, <code class="lang-kotlin">acr</code>, …) — <a href="index.html">UserInfo</a> is the canonical type for user identity that can be refreshed at any time during the session via <code class="lang-kotlin">srgLogin.getUserInfo()</code>.</p><p class="paragraph"><strong>Source of values</strong>:</p><ul><li><p class="paragraph">At login, populated from the validated ID Token's profile claims (subject to the granted scopes: <code class="lang-kotlin">profile</code>, <code class="lang-kotlin">email</code>, <code class="lang-kotlin">address</code>, <code class="lang-kotlin">phone</code>).</p></li><li><p class="paragraph">At runtime, refreshable via <code class="lang-kotlin">srgLogin.getUserInfo(forceRefresh = true)</code>, which calls the OIDC <code class="lang-kotlin">/userinfo</code> endpoint (OIDC Core 1.0 §5.3) and replaces the cached value.</p></li></ul><p class="paragraph"><strong>Validation gate</strong> enforced at the type system level: the primary constructor is <code class="lang-kotlin">internal</code>, and <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-consistent-copy-visibility/index.html">@ConsistentCopyVisibility</a> propagates that visibility to the generated <code class="lang-kotlin">copy()</code> method. Instances can only be obtained from the SDK after either successful ID Token validation (at login or refresh) or a successful <code class="lang-kotlin">/userinfo</code> round-trip with a <code class="lang-kotlin">sub</code>-matching response (OIDC §5.3.2 subject identifier mismatch protection).</p><p class="paragraph">Standard OIDC profile claims are exposed as typed properties. Non-standard or IDP-specific claims are available via <span data-unresolved-link="ch.srg.login.sdk.model/UserInfo//#kotlin.String#kotlin.String?#kotlin.String?#kotlin.String?#kotlin.String?#kotlin.String?#kotlin.String?#kotlin.Long?#kotlin.String?#kotlin.Boolean?#ch.srg.login.sdk.model.Address?#kotlin.String?#kotlin.Boolean?#kotlin.collections.Map[kotlin.String,ch.srg.login.sdk.model.ClaimValue]/PointingToCallableParameters(13)/">rawClaims</span>, using the type-safe accessors inherited from <a href="../-claim-container/index.html">ClaimContainer</a> (<code class="lang-kotlin">getStringClaim</code>, <code class="lang-kotlin">getLongClaim</code>, <code class="lang-kotlin">getBooleanClaim</code>, <code class="lang-kotlin">getStringListClaim</code>, <code class="lang-kotlin">getObjectClaim</code>, <code class="lang-kotlin">getArrayClaim</code>, <code class="lang-kotlin">hasCustomClaim</code>).</p><h4 class="tableheader">See also</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../default-display-name.html"><span>default</span><wbr></wbr><span>Display</span><wbr></wbr><span><span>Name</span></span></a></div></span></div><div><div class="title"><p class="paragraph">For an opt-in convenience that derives a human-readable display name from the claims, with a documented fallback chain.</p></div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION,EXTENSION_PROPERTY,EXTENSION_FUNCTION">Members &amp; Extensions</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="PROPERTY">
+        <h2 class="tableheader">Properties</h2>
+        <div class="table"><a data-name="1453181681%2FProperties%2F1859215268" anchor-label="address" id="1453181681%2FProperties%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="address.html"><span><span>address</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1453181681%2FProperties%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="address.html">address</a><span class="token operator">: </span><a href="../-address/index.html">Address</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">End-User's preferred postal address (<code class="lang-kotlin">address</code> claim) as a structured <a href="../-address/index.html">Address</a> object. Granted by <code class="lang-kotlin">address</code> scope.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-412708279%2FProperties%2F1859215268" anchor-label="email" id="-412708279%2FProperties%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="email.html"><span><span>email</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-412708279%2FProperties%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="email.html">email</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">End-User's preferred email address (<code class="lang-kotlin">email</code> claim). Granted by <code class="lang-kotlin">email</code> scope.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1467242593%2FProperties%2F1859215268" anchor-label="emailVerified" id="1467242593%2FProperties%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="email-verified.html"><span>email</span><wbr></wbr><span><span>Verified</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1467242593%2FProperties%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="email-verified.html">emailVerified</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">true</code> if the IDP has verified the email belongs to the End-User (<code class="lang-kotlin">email_verified</code> claim). Granted by <code class="lang-kotlin">email</code> scope.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-298401562%2FProperties%2F1859215268" anchor-label="familyName" id="-298401562%2FProperties%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="family-name.html"><span>family</span><wbr></wbr><span><span>Name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-298401562%2FProperties%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="family-name.html">familyName</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Surname(s) or last name(s) of the End-User (<code class="lang-kotlin">family_name</code> claim). Granted by <code class="lang-kotlin">profile</code> scope.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-431108163%2FProperties%2F1859215268" anchor-label="givenName" id="-431108163%2FProperties%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="given-name.html"><span>given</span><wbr></wbr><span><span>Name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-431108163%2FProperties%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="given-name.html">givenName</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Given name(s) or first name(s) of the End-User (<code class="lang-kotlin">given_name</code> claim). Granted by <code class="lang-kotlin">profile</code> scope.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1464684293%2FProperties%2F1859215268" anchor-label="locale" id="-1464684293%2FProperties%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="locale.html"><span><span>locale</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1464684293%2FProperties%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="locale.html">locale</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">End-User's locale (<code class="lang-kotlin">locale</code> claim) as a BCP47 language tag (e.g. <code class="lang-kotlin">fr-CH</code>). Granted by <code class="lang-kotlin">profile</code> scope.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2068552726%2FProperties%2F1859215268" anchor-label="name" id="-2068552726%2FProperties%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="name.html"><span><span>name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2068552726%2FProperties%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="name.html">name</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">End-User's full name (<code class="lang-kotlin">name</code> claim) in displayable form. Granted by <code class="lang-kotlin">profile</code> scope.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-224068114%2FProperties%2F1859215268" anchor-label="phoneNumber" id="-224068114%2FProperties%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="phone-number.html"><span>phone</span><wbr></wbr><span><span>Number</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-224068114%2FProperties%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="phone-number.html">phoneNumber</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">End-User's preferred telephone number (<code class="lang-kotlin">phone_number</code> claim) in E.164 format (e.g. <code class="lang-kotlin">+41791234567</code>). Granted by <code class="lang-kotlin">phone</code> scope.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1865633542%2FProperties%2F1859215268" anchor-label="phoneNumberVerified" id="1865633542%2FProperties%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="phone-number-verified.html"><span>phone</span><wbr></wbr><span>Number</span><wbr></wbr><span><span>Verified</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1865633542%2FProperties%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="phone-number-verified.html">phoneNumberVerified</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">true</code> if the IDP has verified the phone number belongs to the End-User (<code class="lang-kotlin">phone_number_verified</code> claim). Granted by <code class="lang-kotlin">phone</code> scope.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-976393945%2FProperties%2F1859215268" anchor-label="picture" id="-976393945%2FProperties%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="picture.html"><span><span>picture</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-976393945%2FProperties%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="picture.html">picture</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">URL of the End-User's profile picture (<code class="lang-kotlin">picture</code> claim). Granted by <code class="lang-kotlin">profile</code> scope.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1214830030%2FProperties%2F1859215268" anchor-label="preferredUsername" id="1214830030%2FProperties%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="preferred-username.html"><span>preferred</span><wbr></wbr><span><span>Username</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1214830030%2FProperties%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="preferred-username.html">preferredUsername</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Shorthand name by which the End-User wishes to be referred to (<code class="lang-kotlin">preferred_username</code> claim). Granted by <code class="lang-kotlin">profile</code> scope. Not guaranteed to be unique by the IDP.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="154298694%2FProperties%2F1859215268" anchor-label="rawClaims" id="154298694%2FProperties%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="raw-claims.html"><span>raw</span><wbr></wbr><span><span>Claims</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="154298694%2FProperties%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="raw-claims.html">rawClaims</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="../-claim-value/index.html">ClaimValue</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">IDP-specific or non-standard claims preserved as <a href="../-claim-value/index.html">ClaimValue</a> (lossless, platform-agnostic). Standard OIDC claims are pulled out into the typed properties above; only the residual claims appear here. Access via the typed accessors inherited from <a href="../-claim-container/index.html">ClaimContainer</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1852268729%2FProperties%2F1859215268" anchor-label="subject" id="1852268729%2FProperties%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="subject.html"><span><span>subject</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1852268729%2FProperties%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="subject.html">subject</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">Stable, non-reassigned subject identifier of the authenticated user (<code class="lang-kotlin">sub</code> claim). Always present — when sourced from <code class="lang-kotlin">/userinfo</code>, the SDK additionally verifies it matches the access token's <code class="lang-kotlin">sub</code> (OIDC §5.3.2).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1771917353%2FProperties%2F1859215268" anchor-label="updatedAt" id="-1771917353%2FProperties%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="updated-at.html"><span>updated</span><wbr></wbr><span><span>At</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1771917353%2FProperties%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="updated-at.html">updatedAt</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Time when the End-User's profile information was last updated (<code class="lang-kotlin">updated_at</code> claim) as epoch seconds. Granted by <code class="lang-kotlin">profile</code> scope.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="263423442%2FFunctions%2F1859215268" anchor-label="defaultDisplayName" id="263423442%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../default-display-name.html"><span>default</span><wbr></wbr><span>Display</span><wbr></wbr><span><span>Name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="263423442%2FFunctions%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="index.html">UserInfo</a><span class="token punctuation">.</span><a href="../default-display-name.html"><span class="token function">defaultDisplayName</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">Returns a human-readable display name derived from <a href="index.html">UserInfo</a>, using a documented fallback chain.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1188852068%2FFunctions%2F1859215268" anchor-label="getArrayClaim" id="1188852068%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-claim-container/get-array-claim.html"><span>get</span><wbr></wbr><span>Array</span><wbr></wbr><span><span>Claim</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1188852068%2FFunctions%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-claim-container/get-array-claim.html"><span class="token function">getArrayClaim</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../-claim-value/index.html">ClaimValue</a><span class="token operator">&gt;</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Returns the items of a JSON array claim as <code class="lang-kotlin">List&lt;ClaimValue&gt;</code>, or <code class="lang-kotlin">null</code> if the claim is absent or not a JSON array.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="279379381%2FFunctions%2F1859215268" anchor-label="getBooleanClaim" id="279379381%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-claim-container/get-boolean-claim.html"><span>get</span><wbr></wbr><span>Boolean</span><wbr></wbr><span><span>Claim</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="279379381%2FFunctions%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-claim-container/get-boolean-claim.html"><span class="token function">getBooleanClaim</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Returns the boolean value of a JSON boolean claim, or <code class="lang-kotlin">null</code> if the claim is absent or not a JSON boolean. JSON strings (even <code class="lang-kotlin">&quot;true&quot;</code> / <code class="lang-kotlin">&quot;false&quot;</code>) return <code class="lang-kotlin">null</code> — strict type check.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-465848723%2FFunctions%2F1859215268" anchor-label="getLongClaim" id="-465848723%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-claim-container/get-long-claim.html"><span>get</span><wbr></wbr><span>Long</span><wbr></wbr><span><span>Claim</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-465848723%2FFunctions%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-claim-container/get-long-claim.html"><span class="token function">getLongClaim</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Returns the Long value of a JSON integer claim, or <code class="lang-kotlin">null</code> if the claim is absent or is not an integer. Fractional (<a href="../-claim-value/-decimal/index.html">ClaimValue.Decimal</a>) and JSON-string values return <code class="lang-kotlin">null</code> — strict type check.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1946518454%2FFunctions%2F1859215268" anchor-label="getObjectClaim" id="-1946518454%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-claim-container/get-object-claim.html"><span>get</span><wbr></wbr><span>Object</span><wbr></wbr><span><span>Claim</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1946518454%2FFunctions%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-claim-container/get-object-claim.html"><span class="token function">getObjectClaim</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="../-claim-value/index.html">ClaimValue</a><span class="token operator">&gt;</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Returns the fields of a JSON object claim as <code class="lang-kotlin">Map&lt;String, ClaimValue&gt;</code>, or <code class="lang-kotlin">null</code> if the claim is absent or not a JSON object.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-352931784%2FFunctions%2F1859215268" anchor-label="getStringClaim" id="-352931784%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-claim-container/get-string-claim.html"><span>get</span><wbr></wbr><span>String</span><wbr></wbr><span><span>Claim</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-352931784%2FFunctions%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-claim-container/get-string-claim.html"><span class="token function">getStringClaim</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Returns the string content of a JSON string claim, or <code class="lang-kotlin">null</code> if the claim is absent or not a JSON string. Numeric / boolean / array / object values return <code class="lang-kotlin">null</code> — no coercion.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-637388278%2FFunctions%2F1859215268" anchor-label="getStringListClaim" id="-637388278%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-claim-container/get-string-list-claim.html"><span>get</span><wbr></wbr><span>String</span><wbr></wbr><span>List</span><wbr></wbr><span><span>Claim</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-637388278%2FFunctions%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-claim-container/get-string-list-claim.html"><span class="token function">getStringListClaim</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">strict<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Returns the list of JSON-string elements from a JSON array claim, or <code class="lang-kotlin">null</code> if the claim is absent or not a JSON array.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-202201580%2FFunctions%2F1859215268" anchor-label="hasCustomClaim" id="-202201580%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-claim-container/has-custom-claim.html"><span>has</span><wbr></wbr><span>Custom</span><wbr></wbr><span><span>Claim</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-202201580%2FFunctions%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-claim-container/has-custom-claim.html"><span class="token function">hasCustomClaim</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns <code class="lang-kotlin">true</code> if <a href="../-claim-container/has-custom-claim.html">name</a> is present in <a href="../-claim-container/raw-claims.html">rawClaims</a> (i.e. is a non-standard / IDP-specific claim), regardless of its value type (including <a href="../-claim-value/-null/index.html">ClaimValue.Null</a>).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© 2026 Copyright</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

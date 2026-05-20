@@ -14,6 +14,7 @@ If you are integrating the SRG Login SDK for the first time and need to preserve
 
 | Version | Released | Effort | Highlights |
 |---|---|---|---|
+| [v1.0.0-beta.13](/docs/upgrades/v1.0.0-beta.13) | May 2026 | ~15–30 min | `srgLogin.getUserInfo()` API · 2 breaking changes (claims moved to `userInfo`, strict `isAuthenticated()`) · Ktor OkHttp engine on Android |
 | [v1.0.0-beta.12](/docs/upgrades/v1.0.0-beta.12) | May 2026 | ~30–45 min | 4 new features · 7 breaking changes · critical JWT parsing fix |
 
 ## Adding a new upgrade page

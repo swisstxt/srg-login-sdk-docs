@@ -44,7 +44,7 @@
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">
-1.0.0-beta.12        </div>
+1.0.0-beta.13        </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
                 <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
@@ -139,7 +139,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-address/index.html">Address</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>formatted<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>streetAddress<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>locality<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>region<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>postalCode<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>country<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">OIDC Address Claim (OIDC Core 1.0 §5.1.1).</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-address/index.html">Address</a></div><div class="brief "><p class="paragraph">OIDC Address Claim (OIDC Core 1.0 §5.1.1).</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -155,6 +155,21 @@
               <div>
                 <div class="title">
                   <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-auth-error/index.html">AuthError</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-116098274%2FClasslikes%2F1859215268" anchor-label="ClaimContainer" id="-116098274%2FClasslikes%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-claim-container/index.html"><span>Claim</span><wbr></wbr><span><span>Container</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-116098274%2FClasslikes%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-claim-container/index.html">ClaimContainer</a></div><div class="brief "><p class="paragraph">Common shape for types that expose a map of OIDC claims with type-safe accessors.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -184,7 +199,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-id-token-claims/index.html">IdTokenClaims</a></div><div class="brief "><p class="paragraph">Parsed claims from an OIDC ID Token (JWT payload).</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-id-token-claims/index.html">IdTokenClaims</a> : <a href="-claim-container/index.html">ClaimContainer</a></div><div class="brief "><p class="paragraph">Validated claims from an OIDC ID Token (JWT payload) — <strong>auth-proof claims only</strong>.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -199,7 +214,22 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-token-set/index.html">TokenSet</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>accessToken<span class="token operator">: </span><a href="-access-token/index.html">AccessToken</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>refreshToken<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>idToken<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>idTokenClaims<span class="token operator">: </span><a href="-id-token-claims/index.html">IdTokenClaims</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>tokenType<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;Bearer&quot;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>scopes<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Public token result from authentication.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-token-set/index.html">TokenSet</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>accessToken<span class="token operator">: </span><a href="-access-token/index.html">AccessToken</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>refreshToken<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>idToken<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>idTokenClaims<span class="token operator">: </span><a href="-id-token-claims/index.html">IdTokenClaims</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>userInfo<span class="token operator">: </span><a href="-user-info/index.html">UserInfo</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>tokenType<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;Bearer&quot;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>scopes<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Public token result from authentication.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-361135190%2FClasslikes%2F1859215268" anchor-label="UserInfo" id="-361135190%2FClasslikes%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-user-info/index.html"><span>User</span><wbr></wbr><span><span>Info</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-361135190%2FClasslikes%2F1859215268"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-user-info/index.html">UserInfo</a> : <a href="-claim-container/index.html">ClaimContainer</a></div><div class="brief "><p class="paragraph">End-User profile information (OIDC Core 1.0 §5.1 Standard Claims, plus phone scope).</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -208,17 +238,17 @@
       </div>
       <div data-togglable="EXTENSION_FUNCTION">
         <h2 class="tableheader">Functions</h2>
-        <div class="table"><a data-name="1415474744%2FFunctions%2F1859215268" anchor-label="defaultDisplayName" id="1415474744%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
+        <div class="table"><a data-name="263423442%2FFunctions%2F1859215268" anchor-label="defaultDisplayName" id="263423442%2FFunctions%2F1859215268" data-filterable-set=":srglogin-core/commonMain"></a>
           <div class="table-row table-row_content" data-filterable-current=":srglogin-core/commonMain" data-filterable-set=":srglogin-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="default-display-name.html"><span>default</span><wbr></wbr><span>Display</span><wbr></wbr><span><span>Name</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1415474744%2FFunctions%2F1859215268"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="263423442%2FFunctions%2F1859215268"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="-id-token-claims/index.html">IdTokenClaims</a><span class="token punctuation">.</span><a href="default-display-name.html"><span class="token function">defaultDisplayName</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">Returns a human-readable display name derived from <a href="-id-token-claims/index.html">IdTokenClaims</a>, using a documented fallback chain.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="-user-info/index.html">UserInfo</a><span class="token punctuation">.</span><a href="default-display-name.html"><span class="token function">defaultDisplayName</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">Returns a human-readable display name derived from <a href="-user-info/index.html">UserInfo</a>, using a documented fallback chain.</p></div></div></div>
                 </div>
               </div>
             </div>

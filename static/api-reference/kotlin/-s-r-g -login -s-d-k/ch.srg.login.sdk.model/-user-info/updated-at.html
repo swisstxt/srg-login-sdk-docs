@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>getObjectClaim</title>
+    <title>updatedAt</title>
     <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
         <script>var pathToRoot = "../../../";</script>
     <script>document.documentElement.classList.replace("no-js", "js");</script>
@@ -44,7 +44,7 @@
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">
-1.0.0-beta.12        </div>
+1.0.0-beta.13        </div>
         <div class="navigation-controls">
         <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
                 <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
@@ -104,12 +104,12 @@
         </nav>
         <div id="resizer" class="resizer" data-item-type="BAR"></div>
         <div id="main" data-item-type="SECTION" role="main">
-<div class="main-content" data-page-type="member" id="content" pageIds="SRG Login SDK::ch.srg.login.sdk.model/IdTokenClaims/getObjectClaim/#kotlin.String/PointingToDeclaration//1859215268">
-  <div class="breadcrumbs"><a href="../../../index.html">SRG Login SDK</a><span class="delimiter">/</span><a href="../index.html">ch.srg.login.sdk.model</a><span class="delimiter">/</span><a href="index.html">IdTokenClaims</a><span class="delimiter">/</span><span class="current">getObjectClaim</span></div>
+<div class="main-content" data-page-type="member" id="content" pageIds="SRG Login SDK::ch.srg.login.sdk.model/UserInfo/updatedAt/#/PointingToDeclaration//1859215268">
+  <div class="breadcrumbs"><a href="../../../index.html">SRG Login SDK</a><span class="delimiter">/</span><a href="../index.html">ch.srg.login.sdk.model</a><span class="delimiter">/</span><a href="index.html">UserInfo</a><span class="delimiter">/</span><span class="current">updatedAt</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>get</span><wbr></wbr><span>Object</span><wbr></wbr><span><span>Claim</span></span></h1>
+    <h1 class="cover"><span>updated</span><wbr></wbr><span><span>At</span></span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="get-object-claim.html"><span class="token function">getObjectClaim</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="../-claim-value/index.html">ClaimValue</a><span class="token operator">&gt;</span><span class="token operator">?</span></div><p class="paragraph">Returns the fields of a JSON object claim as <code class="lang-kotlin">Map&lt;String, ClaimValue&gt;</code>, or <code class="lang-kotlin">null</code> if the claim is absent or not a JSON object.</p><p class="paragraph">Replaces the previous <code class="lang-kotlin">getJsonObjectClaim</code> (which returned <code class="lang-kotlin">JsonObject</code> from kotlinx-serialization) so that consumers on every platform — including Swift (iOS/tvOS via SKIE) and TypeScript (via Kotlin/JS) — can navigate nested structures without depending on <code class="lang-kotlin">kotlinx-serialization-json</code>.</p></div></div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":srglogin-core/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="updated-at.html">updatedAt</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token operator">?</span></div><p class="paragraph">Time when the End-User's profile information was last updated (<code class="lang-kotlin">updated_at</code> claim) as epoch seconds. Granted by <code class="lang-kotlin">profile</code> scope.</p></div></div>
 </div>
     <div class="footer">
         <div class="footer--container">

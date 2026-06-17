@@ -10,16 +10,19 @@ import TabItem from '@theme/TabItem';
 TEMPLATE — Upgrade Guide
 
 This file is excluded from the production build via `draft: true`.
+Full authoring guide & checklist (SDK repo): docs/templates/docusaurus/UPGRADE_GUIDE_TEMPLATE.md
 
 To create a new upgrade page:
-  1. Copy this file to `vX.Y.Z.md` (target version, e.g., `v1.0.0-RC.1.md`).
+  1. Copy this file to `vX.Y.Z.md` (target version, e.g., `v1.0.0-rc.1.md`).
   2. Remove the `draft: true` line.
-  3. Set `sidebar_position` to control sidebar ordering (lower = higher in sidebar;
-     newest version typically gets `sidebar_position: 2`, just below `index.md`).
-  4. Replace all `<...>` placeholders with the actual content.
-  5. Wrap any platform-specific code in <Tabs> / <TabItem> blocks (Android default).
-  6. Add an entry to the Available upgrades table in `index.md`.
-  7. Add the new page to `sidebars.ts` under the Upgrades category.
+  3. Replace all `<...>` placeholders with the actual content.
+  4. Wrap any platform-specific code in <Tabs> / <TabItem> blocks (Android default; add
+     Android TV / Google TV and tvOS tabs where the platform is actually distributed).
+  5. Register the page in `sidebars.ts` under the Upgrades category — THIS is what makes
+     it appear in the sidebar. NOTE: `sidebar_position` frontmatter is INERT here; the
+     Upgrades sidebar is curated manually in sidebars.ts, not auto-generated.
+  6. Add an entry at the top of the Available upgrades table in `index.md`.
+  7. Run `npm run build` to validate (strict broken-link checking).
 */}
 
 # Upgrade to vX.Y.Z
@@ -122,6 +125,45 @@ Short framing: how many tickets, single migration effort, etc.
 :::tip Migration tip
 Searchable patterns to find all call sites that need updating.
 :::
+
+---
+
+## Migration
+
+<Tabs>
+  <TabItem value="android" label="Android" default>
+
+```kotlin
+// From:
+implementation("ch.srg.login:srglogin-core-android:<previous>")
+// To:
+implementation("ch.srg.login:srglogin-core-android:<new>")
+```
+
+Maven repository: `https://swisstxt.github.io/srg-login-sdk-distribution-android/`
+
+  </TabItem>
+  <TabItem value="android-tv" label="Android TV / Google TV">
+
+Android TV and Google TV consume the **same** Android artifact — apply the same version bump as Android.
+
+  </TabItem>
+  <TabItem value="ios" label="iOS">
+
+```swift
+.package(
+    url: "https://github.com/swisstxt/srg-login-sdk-distribution-apple",
+    exact: "<new>"   // use exact: for pre-releases, never from:
+)
+```
+
+  </TabItem>
+  <TabItem value="tvos" label="tvOS">
+
+tvOS uses the **same** Swift Package as iOS — apply the same `exact:` bump.
+
+  </TabItem>
+</Tabs>
 
 ---
 

@@ -20,7 +20,7 @@ If you are integrating the SRG Login SDK for the first time and need to preserve
 
 ## Adding a new upgrade page
 
-When publishing a new SDK version, create a new file in this folder named after the target version (e.g., `v1.0.0-RC.1.md`). Use the [latest upgrade page](/docs/upgrades/v1.0.0-beta.12) as a reference, or copy the [template](#) (`_template.md` in this folder, hidden from production).
+When publishing a new SDK version, create a new file in this folder named after the target version (e.g., `v1.0.0-rc.1.md`). Use the [latest upgrade page](/docs/upgrades/v1.0.0-rc.1) as a reference, or copy the [template](#) (`_template.md` in this folder, hidden from production).
 
 Recommended sections, in order:
 
@@ -33,4 +33,12 @@ Recommended sections, in order:
 7. **What's coming next** — preview of the following release
 8. **Need help?** — pair-programming offer
 
-Use `sidebar_position` in frontmatter to control ordering (lower number = higher in sidebar; latest version should have `sidebar_position: 2` since `index.md` is `1`).
+To publish the page so it actually appears on the site, complete **all** of these steps — the Upgrades sidebar is **manually curated**, so creating the file alone is not enough:
+
+1. **Register the page in `sidebars.ts`** — add it to the `Upgrades` category `items`, right after `'upgrades/index'` so the newest version is on top (e.g. `'upgrades/v1.0.0-rc.1'`). **This is the step that makes the page show up in the sidebar.**
+2. **Add a row** for the new version at the top of the *Available upgrades* table above.
+3. **Build** with `npm run build` to validate (strict broken-link checking).
+
+:::note `sidebar_position` does not control ordering here
+The Upgrades sidebar is defined explicitly in `sidebars.ts` (not auto-generated), so the `sidebar_position` value in a page's frontmatter has **no effect** on its position in this section. The order shown is the order of entries in the `sidebars.ts` `items` array.
+:::

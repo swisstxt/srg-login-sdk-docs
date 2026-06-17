@@ -42,6 +42,7 @@ const sidebars: SidebarsConfig = {
       label: 'Upgrades',
       items: [
         'upgrades/index',
+        'upgrades/v1.0.0-rc.1',
         'upgrades/v1.0.0-beta.13',
         'upgrades/v1.0.0-beta.12',
       ],

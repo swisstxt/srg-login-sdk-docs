@@ -29,8 +29,7 @@ import ch.srg.login.sdk.auth.LogoutType
 
 val authContext = AndroidAuthContext(context = activity, activity = activity)
 srgLogin.logout(
-    logoutType = LogoutType.FrontChannel(),
-    authContext = authContext,
+    logoutType = LogoutType.FrontChannel(authContext = authContext),
 )
 ```
 
@@ -39,8 +38,17 @@ srgLogin.logout(
 
 ```swift
 let authContext = iOSAuthContext(presentationContextProvider: authContextProvider)
-let frontChannel = LogoutType.FrontChannel()
-try await srgLogin.logout(logoutType: frontChannel, authContext: authContext)
+let frontChannel = LogoutType.FrontChannel(authContext: authContext)
+try await srgLogin.logout(logoutType: frontChannel)
+```
+
+  </TabItem>
+  <TabItem value="web" label="Web">
+
+The `SrgLoginWeb` facade exposes a single **front-channel** `logout()` that ends the IDP session and redirects to `postLogoutRedirectUri`:
+
+```typescript
+await sdk.logout();
 ```
 
   </TabItem>
@@ -70,11 +78,15 @@ srgLogin.logout(logoutType = LogoutType.LocalOnly)
   <TabItem value="ios" label="iOS">
 
 ```swift
-try await srgLogin.logout(method: LogoutMethod.LocalOnly())
+try await srgLogin.logout(logoutType: LogoutType.LocalOnly.shared)
 ```
 
   </TabItem>
 </Tabs>
+
+:::note Android TV / Google TV / tvOS
+Device-flow apps have no on-device browser, so they end the session with **local-only** logout — `srgLogin.logout()` on Android TV (defaults to `LogoutType.LocalOnly`), `logout(logoutType: LogoutType.LocalOnly.shared)` on tvOS.
+:::
 
 ## Back-Channel Logout
 
@@ -116,4 +128,7 @@ try await srgLogin.logout(
 - [Authentication](/docs/guides/authentication) — Login flow
 - [Token Management](/docs/guides/token-management) — Token states after logout (`NoTokens`)
 - [Getting Started — Android](/docs/getting-started/android#step-5-implement-logout)
+- [Getting Started — Android TV / Google TV](/docs/getting-started/android-tv#step-4-implement-logout)
 - [Getting Started — iOS](/docs/getting-started/ios#step-5-implement-logout)
+- [Getting Started — tvOS](/docs/getting-started/tvos#step-4-implement-logout)
+- [Getting Started — Web](/docs/getting-started/web#step-5-implement-logout)

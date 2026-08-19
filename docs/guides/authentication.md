@@ -241,6 +241,9 @@ const result = await sdk.handleRedirect();
 ## Related
 
 - [Getting Started — Android](/docs/getting-started/android#step-4-implement-login)
+- [Getting Started — Android TV / Google TV](/docs/getting-started/android-tv#step-3-implement-login-device-flow)
 - [Getting Started — iOS](/docs/getting-started/ios#step-4-implement-login)
+- [Getting Started — tvOS](/docs/getting-started/tvos#step-3-implement-login-device-flow)
+- [Getting Started — Web](/docs/getting-started/web#step-4-implement-login)
 - [Error Handling](/docs/guides/error-handling) — Handle login errors
 - [Token Management](/docs/guides/token-management) — What happens after login

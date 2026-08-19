@@ -32,9 +32,9 @@ function PlatformCards() {
   const platforms = [
     {title: 'Android', link: '/docs/getting-started/android', description: 'Maven via GitHub Pages — zero auth'},
     {title: 'iOS', link: '/docs/getting-started/ios', description: 'Swift Package Manager — zero auth'},
-    {title: 'Android TV', link: '/docs/getting-started/android-tv', description: 'Device Code Flow — planned'},
-    {title: 'tvOS', link: '/docs/getting-started/tvos', description: 'Device Code Flow — planned'},
-    {title: 'Web / JS', link: '/docs/getting-started/web', description: 'JavaScript / WASM — planned'},
+    {title: 'Android TV', link: '/docs/getting-started/android-tv', description: 'Device Code Flow — same Maven as Android'},
+    {title: 'tvOS', link: '/docs/getting-started/tvos', description: 'Device Code Flow — same SPM as iOS'},
+    {title: 'Web / JS', link: '/docs/getting-started/web', description: 'Git package via GitHub — zero auth'},
   ];
 
   return (
@@ -62,7 +62,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title="Documentation"
-      description="OAuth 2.0 / OIDC authentication SDK for Android, iOS, and TV platforms">
+      description="OAuth 2.0 / OIDC authentication SDK for Android, iOS, TV, and Web platforms">
       <HomepageHeader />
       <main>
         <PlatformCards />

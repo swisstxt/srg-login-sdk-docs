@@ -5,7 +5,7 @@ slug: /
 
 # SRG Login SDK
 
-OAuth 2.0 / OIDC authentication SDK for Android, iOS, and TV platforms.
+OAuth 2.0 / OIDC authentication SDK for Android, iOS, TV, and Web platforms.
 
 The SRG Login SDK is a Kotlin Multiplatform library that provides secure authentication for SRG SSR applications. It supports Authorization Code Flow with PKCE, automatic token refresh, and hardware-backed token storage.
 
@@ -15,14 +15,15 @@ The SRG Login SDK is a Kotlin Multiplatform library that provides secure authent
 |----------|--------|-------------|
 | Android (smartphone/tablet) | Production-ready | [Maven (GitHub Pages)](https://swisstxt.github.io/srg-login-sdk-distribution-android/) |
 | iOS (iPhone/iPad) | Production-ready | [SPM (GitHub)](https://github.com/swisstxt/srg-login-sdk-distribution-apple) |
-| Android TV / Google TV | Planned | Device Code Flow (RFC 8628) |
-| tvOS (Apple TV) | Planned | Device Code Flow (RFC 8628) |
-| Web / JavaScript | Planned | npm (future) |
+| Android TV / Google TV | Available (1.0.0-rc.2) | [Maven (GitHub Pages)](https://swisstxt.github.io/srg-login-sdk-distribution-android/) — Device Flow |
+| tvOS (Apple TV) | Available (1.0.0-rc.2) | [SPM (GitHub)](https://github.com/swisstxt/srg-login-sdk-distribution-apple) — Device Flow |
+| Web / JavaScript | Available (1.0.0-rc.2) | [Git (GitHub)](https://github.com/swisstxt/srg-login-sdk-distribution-web) |
 
 ## Quick links
 
 - **[Getting Started](/docs/getting-started/overview)** — Requirements and first steps
 - **[Android Integration](/docs/getting-started/android)** — Add the SDK to your Android app
 - **[iOS Integration](/docs/getting-started/ios)** — Add the SDK to your iOS app
+- **[Web Integration](/docs/getting-started/web)** — Add the SDK to your web app
 - **[API Reference](/docs/api-reference)** — Kotlin API documentation (Dokka)
 - **[Migration](/docs/migration)** — Upgrade guides and changelog

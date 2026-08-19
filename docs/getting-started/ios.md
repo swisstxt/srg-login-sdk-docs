@@ -45,7 +45,7 @@ dependencies: [
 dependencies: [
     .package(
         url: "https://github.com/swisstxt/srg-login-sdk-distribution-apple",
-        exact: "1.0.0-beta.8"
+        exact: "1.0.0-rc.2"
     )
 ]
 ```
@@ -170,7 +170,7 @@ If your app already has a URL scheme registered in `Info.plist` (e.g. from a pre
 
 ## Step 4: Implement Login
 
-`Credentials.Web` triggers the Authorization Code flow with PKCE via `ASWebAuthenticationSession` — a secure, system-managed browser sheet. The user authenticates in this secure browser, never directly in the app.
+`LoginMethod.Web` triggers the Authorization Code flow with PKCE via `ASWebAuthenticationSession` — a secure, system-managed browser sheet. The user authenticates in this secure browser, never directly in the app.
 
 Logging in requires an `iOSAuthContext` that provides a presentation anchor for `ASWebAuthenticationSession`:
 
@@ -190,15 +190,20 @@ class AuthContextProvider: NSObject, ASWebAuthenticationPresentationContextProvi
 let authContextProvider = AuthContextProvider()
 let authContext = iOSAuthContext(presentationContextProvider: authContextProvider)
 
-let result = try await srgLogin.login(credentials: Credentials.Web(authContext: authContext))
+let loginFlow = srgLogin.login(
+    loginMethod: LoginMethod.Web.shared,
+    authContext: authContext
+)
 
-if let success = result as? SdkResultSuccess<TokenSet>, let tokenSet = success.data {
-    // User is authenticated
-}
-
-if let failure = result as? SdkResultFailure {
-    // Handle error
-    print(failure.error)
+for await state in SkieSwiftFlow<LoginState>(loginFlow) {
+    if let success = state as? LoginState.Success {
+        let tokenSet = success.tokenSet
+        // User is authenticated
+    }
+    if let failure = state as? LoginState.Failure {
+        // Handle error
+        print(failure.error)
+    }
 }
 ```
 
@@ -210,8 +215,8 @@ if let failure = result as? SdkResultFailure {
 
 ```swift
 let authContext = iOSAuthContext(presentationContextProvider: authContextProvider)
-let frontChannel = LogoutType.FrontChannel()
-try await srgLogin.logout(logoutType: frontChannel, authContext: authContext)
+let frontChannel = LogoutType.FrontChannel(authContext: authContext)
+try await srgLogin.logout(logoutType: frontChannel)
 ```
 
 > **`postLogoutRedirectUri`** — `nil`: the IDP shows its own confirmation page. Set to your app's URI: the IDP redirects back to your app. In both cases local tokens are cleared and the server session ends.
@@ -219,7 +224,7 @@ try await srgLogin.logout(logoutType: frontChannel, authContext: authContext)
 **Local-only logout** — clears local tokens only, without contacting the server.
 
 ```swift
-try await srgLogin.logout(method: LogoutMethod.LocalOnly())
+try await srgLogin.logout(logoutType: LogoutType.LocalOnly.shared)
 ```
 
 ---
@@ -340,8 +345,8 @@ Always cancel any active `observeTokenState()` loop before calling `shutdown()`.
 | `SrgLoginConfig` | `SRGLoginCore` | OAuth configuration |
 | `AppIdentity` | `SRGLoginCore` | App metadata for Sentry |
 | `iOSAuthContext` | `SRGLoginCore` | Wraps `ASWebAuthenticationPresentationContextProviding` |
-| `Credentials` | `SRGLoginCore` | Sealed class — use `Credentials.Web` |
-| `TokenState` | `SRGLoginCore` | 7 states (Valid, ExpiringSoon, etc.) |
+| `LoginMethod` | `SRGLoginCore` | Sealed class — use `LoginMethod.Web.shared` |
+| `TokenState` | `SRGLoginCore` | 8 states (Valid, ExpiringSoon, etc.) |
 | `LogoutType` | `SRGLoginCore` | `FrontChannel` / `LocalOnly` / `BackChannel` |
 | `SrgLoginError` | `SRGLoginCore` | Error sealed class |
 | `SdkResultSuccess` | `SRGLoginCore` | Generic success wrapper |

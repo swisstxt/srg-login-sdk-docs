@@ -102,3 +102,4 @@ This changelog is synced from the SDK repository on each release.
 - [Migration from Cidaas — iOS](/docs/migration/ios)
 - [Getting Started — Android](/docs/getting-started/android)
 - [Getting Started — iOS](/docs/getting-started/ios)
+- [Getting Started — Web](/docs/getting-started/web)

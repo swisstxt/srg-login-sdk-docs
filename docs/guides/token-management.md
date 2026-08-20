@@ -11,7 +11,7 @@ After a successful login, the SDK manages tokens automatically — including sto
 
 ## Token State
 
-The SDK exposes a reactive `TokenState` stream with 7 states:
+The SDK exposes a reactive `TokenState` stream with 8 states:
 
 | State | Meaning |
 |-------|---------|
@@ -22,6 +22,7 @@ The SDK exposes a reactive `TokenState` stream with 7 states:
 | `Expired` | Token expired, waiting for refresh or re-auth |
 | `RefreshFailed` | Refresh failed (check `error` property) |
 | `NoTokens` | No tokens stored — user is not logged in |
+| `Uninitialized` | State not yet determined (before the first evaluation) |
 
 ### Observe Token State
 

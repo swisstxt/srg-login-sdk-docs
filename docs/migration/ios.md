@@ -32,7 +32,7 @@ This guide helps BU developers migrate their iOS applications from the **Cidaas 
 | 2 | Install SRG Login SDK via SPM or XCFramework |
 | 3 | URL Scheme — no change needed |
 | 4 | Replace `Cidaas.shared` with `SrgLoginSdk.shared.initialize()` + `.create(config:)` |
-| 5 | Replace `loginWithBrowser` closure with `srgLogin.login()` async/await |
+| 5 | Replace `loginWithBrowser` closure with the `srgLogin.login()` `Flow` (via `SkieSwiftFlow`) |
 | 6 | Replace custom logout workaround with `srgLogin.logout()` |
 | 7 | Clean up removed dependencies and files |
 
@@ -187,7 +187,7 @@ cidaas.loginWithBrowser(delegate: self, extraParams: [:]) { result in
 }
 ```
 
-### After (SRG Login SDK) — async/await
+### After (SRG Login SDK) — Flow-based
 
 First, add a presentation context provider for `ASWebAuthenticationSession`:
 

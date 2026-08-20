@@ -128,9 +128,9 @@ class MyApplication : Application() {
 
 ```kotlin
 import ch.srg.login.sdk.SrgLoginSdk
-import ch.srg.login.sdk.config.SrgLoginConfig
-import ch.srg.login.sdk.config.AppIdentity
-import ch.srg.login.sdk.config.Environment
+import ch.srg.login.sdk.SrgLoginConfig
+import ch.srg.login.sdk.AppIdentity
+import ch.srg.login.sdk.Environment
 
 val appVersion = packageManager.getPackageInfo(packageName, 0).versionName ?: "unknown"
 

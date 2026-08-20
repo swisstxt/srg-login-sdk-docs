@@ -9,14 +9,14 @@ import TabItem from '@theme/TabItem';
 
 The SRG Login SDK implements the **Authorization Code flow with PKCE** ([RFC 7636](https://tools.ietf.org/html/rfc7636)) — the recommended OAuth 2.0 flow for native mobile apps. The user authenticates in a secure, system-managed browser, never directly in the app.
 
-## Credential Types
+## Login Methods
 
 `LoginMethod` is a sealed class with 4 variants:
 
-| Credential | Usage | Status |
+| Login Method | Usage | Status |
 |---|---|---|
 | `Web` | Browser login (Authorization Code + PKCE) — smartphones/tablets | **Implemented** |
-| `Device` | Device Code Flow (RFC 8628) — TV, Android TV, Apple TV | Not yet implemented |
+| `Device` | Device Code Flow (RFC 8628) — TV, Android TV, Apple TV | **Implemented** (Android TV, tvOS) |
 | `Biometric` | Biometric login (fingerprint/Face ID) — access to stored tokens | Not yet implemented |
 | `UserPassword` | Direct username/password login — without browser | Not yet implemented |
 

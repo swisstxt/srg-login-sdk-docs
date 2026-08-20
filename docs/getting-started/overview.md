@@ -14,12 +14,13 @@ The SRG Login SDK is a Kotlin Multiplatform (KMP) authentication library impleme
 | iOS | iOS 15.0+ | Xcode 15+ / Swift 5.9+ |
 | Android TV | SDK 21 | Gradle 8.11+ / JDK 17+ |
 | tvOS | tvOS 13.0+ | Xcode 15+ |
+| Web | Modern browser (secure context: HTTPS or localhost) | Any ES-module bundler (Vite / Rollup / webpack) |
 
 ## Features
 
 - Authorization Code Flow with PKCE (RFC 7636)
-- Automatic token refresh with configurable monitoring
-- Hardware-backed token storage (Android Keystore / iOS Keychain)
+- Device Code Flow (RFC 8628) for TV platforms (Android TV, Google TV, tvOS)
+- Automatic token refresh (configurable via `TokenRefreshMode`)
+- Hardware-backed token storage (Android Keystore / iOS Keychain; `sessionStorage` on Web)
 - IDP-agnostic design (works with any OAuth 2.0 / OIDC provider)
 - Sentry error tracking with per-BU tagging
-- Device Code Flow for TV platforms (planned)

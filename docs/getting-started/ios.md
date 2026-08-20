@@ -240,7 +240,7 @@ let tokenStateFlow = SkieSwiftStateFlow<TokenState>(srgLogin.observeTokenState()
 
 for await state in tokenStateFlow {
     guard !Task.isCancelled else { break }
-    // state is one of: Valid, ExpiringSoon, Refreshing, Refreshed, Expired, RefreshFailed, NoTokens
+    // state is one of: Valid, ExpiringSoon, Refreshing, Refreshed, Expired, RefreshFailed, NoTokens, Uninitialized
     print("Token state: \(state)")
 }
 ```

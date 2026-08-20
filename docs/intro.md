@@ -23,7 +23,9 @@ The SRG Login SDK is a Kotlin Multiplatform library that provides secure authent
 
 - **[Getting Started](/docs/getting-started/overview)** — Requirements and first steps
 - **[Android Integration](/docs/getting-started/android)** — Add the SDK to your Android app
+- **[Android TV / Google TV](/docs/getting-started/android-tv)** — Device flow on TV
 - **[iOS Integration](/docs/getting-started/ios)** — Add the SDK to your iOS app
+- **[tvOS Integration](/docs/getting-started/tvos)** — Device flow on Apple TV
 - **[Web Integration](/docs/getting-started/web)** — Add the SDK to your web app
 - **[API Reference](/docs/api-reference)** — Kotlin API documentation (Dokka)
 - **[Migration](/docs/migration)** — Upgrade guides and changelog

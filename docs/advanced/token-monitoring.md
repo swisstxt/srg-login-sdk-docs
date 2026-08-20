@@ -71,6 +71,10 @@ const fresh = await sdk.refreshAccessToken();
   </TabItem>
 </Tabs>
 
+:::note Android TV / Google TV & tvOS
+TV platforms use the **same** token-refresh and monitoring APIs as their mobile counterpart (Android TV like Android, tvOS like iOS), with `TokenRefreshMode.Automatic` as the default.
+:::
+
 ## TokenRefreshConfig Reference
 
 | Parameter | Default | Description |

@@ -28,6 +28,9 @@ $dokka.location:ch.srg.login.sdk.auth/InMemoryReplayCache/clear/#/PointingToDecl
 $dokka.location:ch.srg.login.sdk.auth/InMemoryReplayCache/getCacheSize/#/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.auth/-in-memory-replay-cache/get-cache-size.html
 $dokka.location:ch.srg.login.sdk.auth/InMemoryReplayCache/isAlreadyUsed/#kotlin.String/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.auth/-in-memory-replay-cache/is-already-used.html
 $dokka.location:ch.srg.login.sdk.auth/InMemoryReplayCache/markAsUsed/#kotlin.String/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.auth/-in-memory-replay-cache/mark-as-used.html
+$dokka.location:ch.srg.login.sdk.auth/JsAuthContext///PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.auth/-js-auth-context/index.html
+$dokka.location:ch.srg.login.sdk.auth/JsAuthContext/JsAuthContext/#ch.srg.login.sdk.auth.PlatformType/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.auth/-js-auth-context/-js-auth-context.html
+$dokka.location:ch.srg.login.sdk.auth/JsAuthContext/platformType/#/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.auth/-js-auth-context/platform-type.html
 $dokka.location:ch.srg.login.sdk.auth/LoginMethod.Biometric///PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.auth/-login-method/-biometric/index.html
 $dokka.location:ch.srg.login.sdk.auth/LoginMethod.Device///PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.auth/-login-method/-device/index.html
 $dokka.location:ch.srg.login.sdk.auth/LoginMethod.Migration///PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.auth/-login-method/-migration/index.html
@@ -210,6 +213,32 @@ $dokka.location:ch.srg.login.sdk.internal/Pkce///PointingToDeclaration/-s-r-g -
 $dokka.location:ch.srg.login.sdk.internal/Pkce/Pkce/#kotlin.String#kotlin.String/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.internal/-pkce/-pkce.html
 $dokka.location:ch.srg.login.sdk.internal/Pkce/codeChallenge/#/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.internal/-pkce/code-challenge.html
 $dokka.location:ch.srg.login.sdk.internal/Pkce/codeVerifier/#/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.internal/-pkce/code-verifier.html
+$dokka.location:ch.srg.login.sdk.js////PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/index.html
+$dokka.location:ch.srg.login.sdk.js/LoginResultJs///PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-login-result-js/index.html
+$dokka.location:ch.srg.login.sdk.js/LoginResultJs/authenticated/#/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-login-result-js/authenticated.html
+$dokka.location:ch.srg.login.sdk.js/LoginResultJs/errorCode/#/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-login-result-js/error-code.html
+$dokka.location:ch.srg.login.sdk.js/LoginResultJs/errorMessage/#/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-login-result-js/error-message.html
+$dokka.location:ch.srg.login.sdk.js/SrgLoginWeb///PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-srg-login-web/index.html
+$dokka.location:ch.srg.login.sdk.js/SrgLoginWeb/SrgLoginWeb/#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.String?#kotlin.Boolean/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-srg-login-web/-srg-login-web.html
+$dokka.location:ch.srg.login.sdk.js/SrgLoginWeb/getAccessToken/#/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-srg-login-web/get-access-token.html
+$dokka.location:ch.srg.login.sdk.js/SrgLoginWeb/getUserInfo/#/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-srg-login-web/get-user-info.html
+$dokka.location:ch.srg.login.sdk.js/SrgLoginWeb/handleRedirect/#/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-srg-login-web/handle-redirect.html
+$dokka.location:ch.srg.login.sdk.js/SrgLoginWeb/isAuthenticated/#/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-srg-login-web/is-authenticated.html
+$dokka.location:ch.srg.login.sdk.js/SrgLoginWeb/login/#kotlin.Array[kotlin.String]/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-srg-login-web/login.html
+$dokka.location:ch.srg.login.sdk.js/SrgLoginWeb/logout/#/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-srg-login-web/logout.html
+$dokka.location:ch.srg.login.sdk.js/SrgLoginWeb/observeTokenState/#kotlin.Function1[kotlin.String,kotlin.Unit]/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-srg-login-web/observe-token-state.html
+$dokka.location:ch.srg.login.sdk.js/SrgLoginWeb/openProfile/#kotlin.String/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-srg-login-web/open-profile.html
+$dokka.location:ch.srg.login.sdk.js/SrgLoginWeb/refreshAccessToken/#/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-srg-login-web/refresh-access-token.html
+$dokka.location:ch.srg.login.sdk.js/SrgLoginWeb/refreshUserInfo/#/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-srg-login-web/refresh-user-info.html
+$dokka.location:ch.srg.login.sdk.js/UserInfoJs///PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-user-info-js/index.html
+$dokka.location:ch.srg.login.sdk.js/UserInfoJs/email/#/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-user-info-js/email.html
+$dokka.location:ch.srg.login.sdk.js/UserInfoJs/emailVerified/#/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-user-info-js/email-verified.html
+$dokka.location:ch.srg.login.sdk.js/UserInfoJs/familyName/#/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-user-info-js/family-name.html
+$dokka.location:ch.srg.login.sdk.js/UserInfoJs/givenName/#/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-user-info-js/given-name.html
+$dokka.location:ch.srg.login.sdk.js/UserInfoJs/name/#/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-user-info-js/name.html
+$dokka.location:ch.srg.login.sdk.js/UserInfoJs/picture/#/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-user-info-js/picture.html
+$dokka.location:ch.srg.login.sdk.js/UserInfoJs/preferredUsername/#/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-user-info-js/preferred-username.html
+$dokka.location:ch.srg.login.sdk.js/UserInfoJs/subject/#/PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.js/-user-info-js/subject.html
 $dokka.location:ch.srg.login.sdk.logging////PointingToDeclaration/-s-r-g -login -s-d-k/ch.srg.login.sdk.logging/index.html
 $dokka.location:ch.srg.login.sdk.logging/LogCategory.AUTHENTICATION///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-s-r-g -login -s-d-k/ch.srg.login.sdk.logging/-log-category/-a-u-t-h-e-n-t-i-c-a-t-i-o-n/index.html
 $dokka.location:ch.srg.login.sdk.logging/LogCategory.ERROR_TRACKING///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-s-r-g -login -s-d-k/ch.srg.login.sdk.logging/-log-category/-e-r-r-o-r_-t-r-a-c-k-i-n-g/index.html
@@ -472,6 +501,7 @@ ch.srg.login.sdk.auth
 ch.srg.login.sdk.errors
 ch.srg.login.sdk.events
 ch.srg.login.sdk.internal
+ch.srg.login.sdk.js
 ch.srg.login.sdk.logging
 ch.srg.login.sdk.model
 ch.srg.login.sdk.result

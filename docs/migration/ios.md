@@ -32,7 +32,7 @@ This guide helps BU developers migrate their iOS applications from the **Cidaas 
 | 2 | Install SRG Login SDK via SPM or XCFramework |
 | 3 | URL Scheme — no change needed |
 | 4 | Replace `Cidaas.shared` with `SrgLoginSdk.shared.initialize()` + `.create(config:)` |
-| 5 | Replace `loginWithBrowser` closure with `srgLogin.login()` async/await |
+| 5 | Replace `loginWithBrowser` closure with the `srgLogin.login()` `Flow` (via `SkieSwiftFlow`) |
 | 6 | Replace custom logout workaround with `srgLogin.logout()` |
 | 7 | Clean up removed dependencies and files |
 
@@ -187,7 +187,7 @@ cidaas.loginWithBrowser(delegate: self, extraParams: [:]) { result in
 }
 ```
 
-### After (SRG Login SDK) — async/await
+### After (SRG Login SDK) — Flow-based
 
 First, add a presentation context provider for `ASWebAuthenticationSession`:
 
@@ -212,20 +212,25 @@ import SRGLoginCore
 let authContextProvider = AuthContextProvider()
 let authContext = iOSAuthContext(presentationContextProvider: authContextProvider)
 
-let result = try await srgLogin.login(credentials: Credentials.Web(authContext: authContext))
+let loginFlow = srgLogin.login(
+    loginMethod: LoginMethod.Web.shared,
+    authContext: authContext
+)
 
-if let success = result as? SdkResultSuccess<TokenSet>, let tokenSet = success.data {
-    // User is authenticated
-}
-
-if let failure = result as? SdkResultFailure {
-    // Handle error
-    print(failure.error)
+for await state in SkieSwiftFlow<LoginState>(loginFlow) {
+    if let success = state as? LoginState.Success {
+        let tokenSet = success.tokenSet
+        // User is authenticated
+    }
+    if let failure = state as? LoginState.Failure {
+        // Handle error
+        print(failure.error)
+    }
 }
 ```
 
 **Key differences:**
-- Closure `Result<T, Error>` → Swift **async/await** with `SdkResult`
+- Closure callbacks → a Kotlin `Flow<LoginState>` collected with `SkieSwiftFlow`
 - `ASWebAuthenticationSession` is managed by the SDK (no manual setup)
 - Embedded `WKWebView` login (CidaasView) is no longer supported — `ASWebAuthenticationSession` only
 
@@ -251,14 +256,14 @@ CidaasLogoutManager.shared.logout(
 
 ```swift
 let authContext = iOSAuthContext(presentationContextProvider: authContextProvider)
-let frontChannel = LogoutType.FrontChannel()
-try await srgLogin.logout(logoutType: frontChannel, authContext: authContext)
+let frontChannel = LogoutType.FrontChannel(authContext: authContext)
+try await srgLogin.logout(logoutType: frontChannel)
 ```
 
 **Local-only logout** — clears local tokens only:
 
 ```swift
-try await srgLogin.logout(method: LogoutMethod.LocalOnly())
+try await srgLogin.logout(logoutType: LogoutType.LocalOnly.shared)
 ```
 
 You can **delete the entire `CidaasLogoutManager` class** — the SDK handles everything natively.
@@ -289,12 +294,12 @@ After migration, remove the following from your project:
 | `DomainURL` | `.int` / `.prod` | Enum instead of raw URL |
 | `ClientId` | `clientId` | Same value |
 | `RedirectURL` | `redirectUri` | Same value |
-| `loginWithBrowser(delegate:completion:)` | `srgLogin.login(credentials:authContext:)` | async/await |
-| `loginWithEmbeddedBrowser(delegate:completion:)` | `srgLogin.login(credentials: .web, authContext:)` | ASWebAuthenticationSession only |
+| `loginWithBrowser(delegate:completion:)` | `srgLogin.login(loginMethod:authContext:)` | Returns a `Flow<LoginState>` |
+| `loginWithEmbeddedBrowser(delegate:completion:)` | `srgLogin.login(loginMethod: LoginMethod.Web.shared, authContext:)` | ASWebAuthenticationSession only |
 | `getUserInfo(accessToken:completion:)` | `srgLogin.getAccessToken()` + manual UserInfo call | JWT claims available directly |
 | Closure `Result<T, Error>` | `SdkResult<T>` | Type-safe sealed class |
 | `NSError` / opaque errors | `SrgLoginError` | Type-safe sealed class |
-| `CidaasLogoutManager` (workaround) | `srgLogin.logout(logoutType:authContext:)` | Built-in |
+| `CidaasLogoutManager` (workaround) | `srgLogin.logout(logoutType:)` | Built-in |
 | N/A | `srgLogin.getAccessToken()` | Auto-refresh, available anytime |
 | N/A | `srgLogin.observeTokenState()` | Reactive token monitoring |
 | N/A | `srgLogin.openSsoClient(url, authContext)` | Open authenticated web pages |

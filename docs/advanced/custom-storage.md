@@ -15,6 +15,7 @@ The SDK stores tokens in platform-native secure storage by default. You can cust
 |----------|------------------|---------------|
 | **Android** | EncryptedSharedPreferences | Android Keystore (hardware-backed TEE/StrongBox when available) |
 | **iOS** | iOS Keychain | Secure Enclave (when available) |
+| **Web** | `sessionStorage` (default) | Browser-managed — per-tab, cleared when the tab closes |
 
 By default, all SDK instances share the same storage namespace:
 
@@ -57,6 +58,11 @@ SrgLoginSdk.shared.initialize(
     isDebugBuild: false
 )
 ```
+
+  </TabItem>
+  <TabItem value="web" label="Web">
+
+The `SrgLoginWeb` facade does **not** expose `TokenStorageConfig`. Web tokens are stored in the browser's `sessionStorage` by default (per-tab, cleared when the tab closes).
 
   </TabItem>
 </Tabs>
@@ -129,6 +135,17 @@ let srgLoginInt = SrgLoginSdk.shared.create(config: SrgLoginConfig(
 ```
 
   </TabItem>
+  <TabItem value="web" label="Web">
+
+```typescript
+// Construct a separate SrgLoginWeb per configuration — no shared initialize() step on web.
+const sdkProd = new SrgLoginWeb("prod-client-id", `${window.location.origin}/callback`, "PROD", /* … */);
+const sdkInt = new SrgLoginWeb("int-client-id", `${window.location.origin}/callback`, "INT", /* … */);
+```
+
+Each instance keeps its own `sessionStorage`-backed session.
+
+  </TabItem>
 </Tabs>
 
 ## When to Customize
@@ -160,6 +177,18 @@ The SDK uses the iOS Keychain Services API:
 - **Access control**: `kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly` — tokens available after first unlock, not synced to other devices
 - **Hardware backing**: Secure Enclave when available (iPhone 5s+, iPad Air+)
 - **Migration**: Tokens survive app updates but are removed on app uninstall
+
+### Web: sessionStorage
+
+The web build stores tokens in the browser's `sessionStorage`:
+
+- **Scope**: per-tab — tokens are not shared across tabs and are cleared when the tab closes
+- **Not configurable via the facade**: `SrgLoginWeb` uses `sessionStorage` by default; a custom store is a lower-level extension point, not exposed by the constructor
+- **Secure context required**: the SDK requires HTTPS (or `localhost`) plus the Web Crypto API
+
+### Android TV / Google TV & tvOS
+
+TV platforms reuse their mobile counterpart's storage — Android TV uses the same **Android Keystore / EncryptedSharedPreferences** as Android; tvOS uses the same **Keychain** as iOS.
 
 ## What Is Stored
 

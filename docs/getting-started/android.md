@@ -76,7 +76,7 @@ In your version catalog (`gradle/libs.versions.toml`):
 
 ```toml
 [versions]
-srglogin = "1.0.0-beta.3"
+srglogin = "1.0.0-rc.2"
 
 [libraries]
 srglogin-core = { group = "ch.srg.login", name = "srglogin-core-android", version.ref = "srglogin" }
@@ -155,9 +155,9 @@ Then create an `SrgLogin` instance with your OAuth configuration.
 
 ```kotlin
 import ch.srg.login.sdk.SrgLoginSdk
-import ch.srg.login.sdk.config.SrgLoginConfig
-import ch.srg.login.sdk.config.AppIdentity
-import ch.srg.login.sdk.config.Environment
+import ch.srg.login.sdk.SrgLoginConfig
+import ch.srg.login.sdk.AppIdentity
+import ch.srg.login.sdk.Environment
 
 val appVersion = packageManager.getPackageInfo(packageName, 0).versionName ?: "unknown"
 
@@ -243,18 +243,18 @@ override fun onNewIntent(intent: Intent) {
 
 ## Step 4: Implement Login
 
-`Credentials.Web` triggers the Authorization Code flow with PKCE via Chrome Custom Tabs — a secure, sandboxed browser tab. The user authenticates in this secure browser, never directly in the app.
+`LoginMethod.Web` triggers the Authorization Code flow with PKCE via Chrome Custom Tabs — a secure, sandboxed browser tab. The user authenticates in this secure browser, never directly in the app.
 
 ```kotlin
 import ch.srg.login.sdk.auth.AndroidAuthContext
-import ch.srg.login.sdk.auth.Credentials
+import ch.srg.login.sdk.auth.LoginMethod
 import ch.srg.login.sdk.auth.LoginState
 
 val authContext = AndroidAuthContext(context = activity, activity = activity)
 
 srgLogin
     .login(
-        credentials = Credentials.Web,
+        loginMethod = LoginMethod.Web,
         authContext = authContext,
     )
     .collect { loginState ->
@@ -283,8 +283,7 @@ import ch.srg.login.sdk.auth.LogoutType
 
 val authContext = AndroidAuthContext(context = activity, activity = activity)
 srgLogin.logout(
-    logoutType = LogoutType.FrontChannel(),
-    authContext = authContext,
+    logoutType = LogoutType.FrontChannel(authContext = authContext),
 )
 ```
 
@@ -308,6 +307,7 @@ srgLogin.observeTokenState().collect { state ->
         TokenState.Expired       -> { /* Waiting for refresh or re-auth */ }
         is TokenState.RefreshFailed -> { /* Refresh failed */ }
         TokenState.NoTokens      -> { /* No tokens, show login */ }
+        TokenState.Uninitialized -> { /* State not yet determined */ }
     }
 }
 ```
@@ -397,7 +397,7 @@ Always cancel any active `observeTokenState()` collection before calling `shutdo
 | `Environment` | `ch.srg.login.sdk` |
 | `handleRedirect()` | `ch.srg.login.sdk` *(top-level function)* |
 | `AndroidAuthContext` | `ch.srg.login.sdk.auth` |
-| `Credentials` | `ch.srg.login.sdk.auth` |
+| `LoginMethod` | `ch.srg.login.sdk.auth` |
 | `LoginState` | `ch.srg.login.sdk.auth` |
 | `TokenState` | `ch.srg.login.sdk.auth` |
 | `LogoutType` | `ch.srg.login.sdk.auth` |

@@ -50,6 +50,26 @@ AppIdentity(
 ```
 
   </TabItem>
+  <TabItem value="web" label="Web">
+
+On web there is no `AppIdentity` object — the `businessUnit` / `businessUnitName` (and `appId` / `appName` / `appVersion`) are positional arguments to the `SrgLoginWeb` constructor:
+
+```typescript
+new SrgLoginWeb(
+  "your-client-id",
+  `${window.location.origin}/callback`,
+  "INT",
+  "ch.example.web",              // appId
+  "My Web App",                  // appName
+  "1.0.0",                       // appVersion
+  "SRF",                         // businessUnit
+  "Schweizer Radio und Fernsehen", // businessUnitName
+  `${window.location.origin}/`,
+  true,
+);
+```
+
+  </TabItem>
 </Tabs>
 
 :::warning

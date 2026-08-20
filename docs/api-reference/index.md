@@ -16,13 +16,14 @@ The complete Kotlin API documentation, auto-generated from KDoc comments using [
 
 | Package | Description |
 |---------|-------------|
-| `ch.srg.login.sdk` | Main entry point — `SrgLogin` facade, `SrgLoginConfig` |
-| `ch.srg.login.sdk.auth` | Authentication flows and token state management |
-| `ch.srg.login.sdk.token` | Token storage, `TokenSet`, access token claims |
-| `ch.srg.login.sdk.model` | Data models — OIDC configuration, credentials |
+| `ch.srg.login.sdk` | Main entry point — `SrgLogin`, `SrgLoginSdk`, `SrgLoginConfig`, `AppIdentity`, `Environment` |
+| `ch.srg.login.sdk.auth` | Authentication — `LoginMethod`, `LoginState`, `TokenState`, `LogoutType`, `LogoutResult`, auth contexts |
+| `ch.srg.login.sdk.model` | Data models — `TokenSet`, `AccessToken`, `UserInfo`, `IdTokenClaims` |
+| `ch.srg.login.sdk.token` | Token storage (`TokenStorageConfig`) |
 | `ch.srg.login.sdk.errors` | Error types — `SrgLoginError` sealed class |
+| `ch.srg.login.sdk.result` | `SdkResult` success/failure wrapper |
 | `ch.srg.login.sdk.events` | Lifecycle events — `SdkLifecycleEvent`, observers |
-| `ch.srg.login.sdk.result` | Result types — `LoginState`, `LogoutResult` |
+| `ch.srg.login.sdk.js` | Web facade — `SrgLoginWeb`, `UserInfoJs`, `LoginResultJs` |
 | `ch.srg.login.sdk.logging` | Logging configuration |
 
 ## Common entry points

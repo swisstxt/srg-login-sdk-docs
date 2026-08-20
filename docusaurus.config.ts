@@ -73,6 +73,10 @@ const config: Config = {
               href: 'https://github.com/swisstxt/srg-login-sdk-distribution-apple',
               label: 'iOS (SPM)',
             },
+            {
+              href: 'https://github.com/swisstxt/srg-login-sdk-distribution-web',
+              label: 'Web (Git)',
+            },
           ],
         },
         {
@@ -87,6 +91,10 @@ const config: Config = {
             {
               href: 'https://github.com/swisstxt/srg-login-sdk-sample-ios',
               label: 'iOS Sample',
+            },
+            {
+              href: 'https://github.com/swisstxt/srg-login-sdk-sample-web',
+              label: 'Web Sample',
             },
           ],
         },
@@ -123,6 +131,10 @@ const config: Config = {
               label: 'iOS (SPM)',
               href: 'https://github.com/swisstxt/srg-login-sdk-distribution-apple',
             },
+            {
+              label: 'Web (Git)',
+              href: 'https://github.com/swisstxt/srg-login-sdk-distribution-web',
+            },
           ],
         },
         {
@@ -135,6 +147,10 @@ const config: Config = {
             {
               label: 'iOS Sample',
               href: 'https://github.com/swisstxt/srg-login-sdk-sample-ios',
+            },
+            {
+              label: 'Web Sample',
+              href: 'https://github.com/swisstxt/srg-login-sdk-sample-web',
             },
           ],
         },

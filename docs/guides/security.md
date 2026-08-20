@@ -8,7 +8,7 @@ The SRG Login SDK follows OAuth 2.0 security best practices for native mobile ap
 
 ## PKCE (Proof Key for Code Exchange)
 
-All `Credentials.Web` login flows use PKCE automatically. This prevents authorization code interception attacks.
+All `LoginMethod.Web` login flows use PKCE automatically. This prevents authorization code interception attacks.
 
 | Step | What happens |
 |------|-------------|

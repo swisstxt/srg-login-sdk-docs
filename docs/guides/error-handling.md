@@ -86,7 +86,26 @@ func handleError(_ error: SrgLoginError) {
 ```
 
   </TabItem>
+  <TabItem value="web" label="Web">
+
+The web facade does not surface the `SrgLoginError` sealed class. Login errors arrive as structured fields on the `LoginResultJs` returned by `handleRedirect()`:
+
+```typescript
+const result = await sdk.handleRedirect();
+if (!result.authenticated) {
+  // result.errorCode is a stable code; result.errorMessage is a sanitized description
+  showError(result.errorMessage ?? result.errorCode);
+}
+```
+
+Other facade methods (`getAccessToken`, `getUserInfo`, …) return the value or `null` on failure — there is no `SdkResult` wrapper on web.
+
+  </TabItem>
 </Tabs>
+
+:::note Android TV / Google TV & tvOS
+TV platforms use the **same** `SrgLoginError` sealed class as their mobile counterpart — the Android / iOS patterns above apply unchanged.
+:::
 
 ## SdkResult
 
@@ -126,6 +145,18 @@ On iOS, `SdkResult` is mapped by SKIE as `SdkResultSuccess<T>` and `SdkResultFai
 :::
 
   </TabItem>
+  <TabItem value="web" label="Web">
+
+There is no `SdkResult` on web — facade methods return the value directly or `null` on failure:
+
+```typescript
+const token = await sdk.getAccessToken(); // string | null
+if (token === null) {
+  // not authenticated / refresh failed — start login
+}
+```
+
+  </TabItem>
 </Tabs>
 
 ## Common Error Scenarios
@@ -144,3 +175,4 @@ On iOS, `SdkResult` is mapped by SKIE as `SdkResultSuccess<T>` and `SdkResultFai
 - [Token Management](/docs/guides/token-management) — Token state and refresh errors
 - [Getting Started — Android](/docs/getting-started/android#step-9-error-handling)
 - [Getting Started — iOS](/docs/getting-started/ios#step-9-error-handling)
+- [Getting Started — Web](/docs/getting-started/web#step-3-handle-the-redirect-callback-route) — web error handling via `handleRedirect()`

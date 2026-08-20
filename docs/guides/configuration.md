@@ -16,9 +16,9 @@ After initialization, create an `SrgLogin` instance by passing a `SrgLoginConfig
 
 ```kotlin
 import ch.srg.login.sdk.SrgLoginSdk
-import ch.srg.login.sdk.config.SrgLoginConfig
-import ch.srg.login.sdk.config.AppIdentity
-import ch.srg.login.sdk.config.Environment
+import ch.srg.login.sdk.SrgLoginConfig
+import ch.srg.login.sdk.AppIdentity
+import ch.srg.login.sdk.Environment
 
 val config = SrgLoginConfig(
     clientId = "your-oauth-client-id",
@@ -61,17 +61,36 @@ let srgLogin = SrgLoginSdk.shared.create(config: config)
 ```
 
   </TabItem>
+  <TabItem value="web" label="Web">
+
+On web there is no separate `SrgLoginConfig` object — the same configuration is passed as positional arguments to the `SrgLoginWeb` constructor:
+
+```typescript
+import { SrgLoginWeb } from "@swisstxt/srg-login-sdk";
+
+const sdk = new SrgLoginWeb(
+  "your-oauth-client-id",
+  `${window.location.origin}/callback`,   // redirectUri
+  "INT",                                   // environment
+  "ch.example.web", "My Web App", "1.0.0", // appId, appName, appVersion
+  "SRF", "Schweizer Radio und Fernsehen",  // businessUnit, businessUnitName
+  `${window.location.origin}/`,            // postLogoutRedirectUri
+  true,                                    // enableLogging
+);
+```
+
+  </TabItem>
 </Tabs>
 
 ## Environment
 
 Use `environment` to select the OIDC endpoints. Each environment has its own OpenID Connect discovery endpoint and its own set of registered clients.
 
-| Environment | Android | iOS | OIDC Server |
-|-------------|---------|-----|-------------|
-| Development | `Environment.DEV` | `.dev` | `account-dev.srgssr.ch` |
-| Integration | `Environment.INT` | `.int` | `account-int.srgssr.ch` |
-| Production | `Environment.PROD` | `.prod` | `account.srgssr.ch` |
+| Environment | Android | iOS | Web | OIDC Server |
+|-------------|---------|-----|-----|-------------|
+| Development | `Environment.DEV` | `.dev` | `"DEV"` | `account-dev.srgssr.ch` |
+| Integration | `Environment.INT` | `.int` | `"INT"` | `account-int.srgssr.ch` |
+| Production | `Environment.PROD` | `.prod` | `"PROD"` | `account.srgssr.ch` |
 
 :::danger
 The `environment` **must** match the environment in which your `clientId` was registered. A mismatch results in `invalid_client` errors during login. Confirm with the SRG SSR identity team which environment your `clientId` belongs to.
@@ -80,6 +99,8 @@ The `environment` **must** match the environment in which your `clientId` was re
 ## AppIdentity
 
 `AppIdentity` provides metadata for Sentry error tracking. All fields are required.
+
+> On **web**, these same fields (`appId`, `appName`, `appVersion`, `businessUnit`, `businessUnitName`) are passed as positional arguments to the `SrgLoginWeb` constructor.
 
 ### Dynamic fields
 
@@ -121,6 +142,14 @@ SrgLoginSdk.shutdown()
 ```swift
 SrgLoginSdk.shared.shutdown()
 // Then call initialize(...) and create(config:) again with the new config
+```
+
+  </TabItem>
+  <TabItem value="web" label="Web">
+
+```typescript
+// The SrgLoginWeb facade has no shutdown() — to reconfigure, construct a new instance:
+const sdk = new SrgLoginWeb(/* new configuration … */);
 ```
 
   </TabItem>

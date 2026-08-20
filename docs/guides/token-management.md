@@ -38,6 +38,7 @@ srgLogin.observeTokenState().collect { state ->
         TokenState.Expired       -> { /* Wait for refresh or re-auth */ }
         is TokenState.RefreshFailed -> { /* Handle error */ }
         TokenState.NoTokens      -> { /* Show login screen */ }
+        TokenState.Uninitialized -> { /* State not yet determined */ }
     }
 }
 ```
@@ -51,7 +52,7 @@ let tokenStateFlow = SkieSwiftStateFlow<TokenState>(srgLogin.observeTokenState()
 for await state in tokenStateFlow {
     guard !Task.isCancelled else { break }
     // state is one of: Valid, ExpiringSoon, Refreshing, Refreshed,
-    //                   Expired, RefreshFailed, NoTokens
+    //                   Expired, RefreshFailed, NoTokens, Uninitialized
     print("Token state: \(state)")
 }
 ```
@@ -61,7 +62,24 @@ On iOS, you must wrap the Kotlin `StateFlow` with `SkieSwiftStateFlow` to get a 
 :::
 
   </TabItem>
+  <TabItem value="web" label="Web">
+
+```typescript
+const unsubscribe = sdk.observeTokenState((tokenState) => {
+  // tokenState is a string, e.g. "Valid", "ExpiringSoon", "Refreshing", "Expired", "NoTokens"
+  console.log("Token state:", tokenState);
+});
+
+// Later: stop receiving updates
+unsubscribe();
+```
+
+  </TabItem>
 </Tabs>
+
+:::note Android TV / Google TV & tvOS
+TV platforms use the **same** token APIs as their mobile counterpart (Android TV like Android, tvOS like iOS). Device-flow apps do not use `openSsoClient` (no on-device browser).
+:::
 
 ## Get Access Token
 
@@ -99,6 +117,22 @@ if let success = result as? SdkResultSuccess<AccessToken>, let token = success.d
 if let failure = result as? SdkResultFailure {
     print(failure.error)
 }
+```
+
+  </TabItem>
+  <TabItem value="web" label="Web">
+
+```typescript
+const authenticated = await sdk.isAuthenticated();
+
+// Returns a valid token (refreshing transparently), or null if not authenticated:
+const token = await sdk.getAccessToken();
+if (token) {
+  const authHeader = `Bearer ${token}`;
+}
+
+// Force a refresh (e.g. after a 401 from your resource server):
+const fresh = await sdk.refreshAccessToken();
 ```
 
   </TabItem>
@@ -143,6 +177,14 @@ _ = try? await srgLogin.openSsoClient(
 ```
 
 `prompt=none` suppresses any login prompt if the SSO session has expired — the call fails with an error instead of showing a login screen.
+
+  </TabItem>
+  <TabItem value="web" label="Web">
+
+```typescript
+// On web the SSO helper is openProfile()
+await sdk.openProfile("https://settings.srgssr.ch/profile?prompt=none");
+```
 
   </TabItem>
 </Tabs>

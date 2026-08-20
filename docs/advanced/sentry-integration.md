@@ -29,7 +29,7 @@ The SDK captures errors at **38 critical locations** across all subsystems:
 |-----------|:--------------:|---------|
 | Token Management | 5 | Refresh failures, validation errors |
 | Authentication | 7 | Login failures, PKCE errors, callback processing |
-| Storage Operations | 14 | Android Keystore / iOS Keychain failures |
+| Storage Operations | 14 | Android Keystore / iOS Keychain / Web sessionStorage failures |
 | API Service | 3 | Network errors, token exchange failures |
 | JWT Validation | 6 | Signature verification, claim validation |
 | Logout Token Validation | 2 | Back-channel logout failures |
@@ -82,6 +82,8 @@ let config = SrgLoginConfig(
   </TabItem>
 </Tabs>
 
+> On **web**, the same `AppIdentity` fields (`appId`, `appName`, `appVersion`, `businessUnit`, `businessUnitName`) are passed as arguments to the `SrgLoginWeb` constructor.
+
 ### Sentry Tags
 
 Each error event is enriched with the following tags:
@@ -92,11 +94,15 @@ Each error event is enriched with the following tags:
 | `app.name` | `AppIdentity.appName` | `SRF News` |
 | `app.version` | `AppIdentity.appVersion` | `2.5.3` |
 | `business_unit` | `AppIdentity.businessUnit` | `SRF` |
-| `sdk.version` | Auto-detected | `1.0.0-beta.3` |
-| `platform` | Auto-detected | `Android`, `iOS` |
+| `sdk.version` | Auto-detected | `1.0.0-rc.2` |
+| `platform` | Auto-detected | `Android`, `iOS`, `JavaScript` |
 | `os.version` | Auto-detected | `14.0`, `17.4` |
 | `device.model` | Auto-detected | `Pixel 8`, `iPhone 15` |
 | `environment` | `SrgLoginConfig.environment` | `PROD` |
+
+:::note Android TV / Google TV & tvOS
+The `platform` tag is derived from the compile target, not the device class: **Android TV / Google TV report `Android`**, and **tvOS reports `iOS`** (they reuse those build targets). Filter TV traffic in Sentry via `business_unit` / `app.id` rather than `platform`.
+:::
 
 ## Per-Environment Configuration
 

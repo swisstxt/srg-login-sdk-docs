@@ -36,15 +36,24 @@ The exact set of supported scopes depends on your IDP configuration. The SDK rea
 ```kotlin
 // Login with refresh token + profile access
 srgLogin.login(
-    credentials = Credentials.Web,
+    loginMethod = LoginMethod.Web,
     authContext = authContext,
     additionalScopes = listOf("offline_access", "profile", "email")
 )
 
 // Minimal login — only "openid" is requested
+srgLogin.login(loginMethod = LoginMethod.Web, authContext = authContext)
+```
+
+  </TabItem>
+  <TabItem value="android-tv" label="Android TV / Google TV">
+
+```kotlin
+// Device flow — additionalScopes are requested the same way
 srgLogin.login(
-    credentials = Credentials.Web,
-    authContext = authContext
+    loginMethod = LoginMethod.Device,
+    authContext = authContext,
+    additionalScopes = listOf("offline_access", "profile", "email")
 )
 ```
 
@@ -53,17 +62,37 @@ srgLogin.login(
 
 ```swift
 // Login with refresh token + profile access
-try await srgLogin.login(
-    credentials: Credentials.Web(),
+let loginFlow = srgLogin.login(
+    loginMethod: LoginMethod.Web.shared,
     authContext: authContext,
     additionalScopes: ["offline_access", "profile", "email"]
 )
 
 // Minimal login — only "openid" is requested
-try await srgLogin.login(
-    credentials: Credentials.Web(),
-    authContext: authContext
+let minimalFlow = srgLogin.login(loginMethod: LoginMethod.Web.shared, authContext: authContext)
+```
+
+  </TabItem>
+  <TabItem value="tvos" label="tvOS">
+
+```swift
+// Device flow — additionalScopes are requested the same way
+let loginFlow = srgLogin.login(
+    loginMethod: LoginMethod.Device.shared,
+    authContext: TvOSAuthContext(),
+    additionalScopes: ["offline_access", "profile", "email"]
 )
+```
+
+  </TabItem>
+  <TabItem value="web" label="Web">
+
+```typescript
+// On web, the requested scopes are the argument to login()
+await sdk.login(["offline_access", "profile", "email"]);
+
+// Minimal login — only "openid" is requested
+await sdk.login([]);
 ```
 
   </TabItem>

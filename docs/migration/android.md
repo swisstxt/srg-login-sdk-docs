@@ -252,7 +252,7 @@ cidaas.loginWithBrowser(activityContext, null, object : EventResult<AccessTokenE
 
 ```kotlin
 import ch.srg.login.sdk.auth.AndroidAuthContext
-import ch.srg.login.sdk.auth.Credentials
+import ch.srg.login.sdk.auth.LoginMethod
 import ch.srg.login.sdk.auth.LoginState
 
 viewModelScope.launch {
@@ -263,7 +263,7 @@ viewModelScope.launch {
 
     srgLogin
         .login(
-            credentials = Credentials.Web,
+            loginMethod = LoginMethod.Web,
             authContext = authContext,
         )
         .collect { loginState ->
@@ -303,9 +303,9 @@ The Cidaas SDK logout was not working, requiring a custom front-channel / back-c
 val authContext = AndroidAuthContext(context = activity, activity = activity)
 srgLogin.logout(
     logoutType = LogoutType.FrontChannel(
+        authContext = authContext,
         postLogoutRedirectUri = "your-app-scheme://logout"
     ),
-    authContext = authContext,
 )
 ```
 
@@ -341,10 +341,10 @@ After migration, remove the following from your project:
 | `DomainURL` | `Environment.INT` / `.PROD` | Enum instead of raw URL |
 | `ClientId` | `clientId` | Same value |
 | `RedirectURL` | `redirectUri` | Same value |
-| `loginWithBrowser(ctx, null, callback)` | `srgLogin.login(credentials, authContext)` | Returns Flow |
+| `loginWithBrowser(ctx, null, callback)` | `srgLogin.login(loginMethod, authContext)` | Returns Flow |
 | `EventResult<AccessTokenEntity>` | `LoginState.Success` / `LoginState.Failure` | Flow-based |
 | `WebAuthError` | `SrgLoginError` | Package: `ch.srg.login.sdk.errors` |
-| Custom front/back-channel logout | `srgLogin.logout(logoutType, authContext)` | Works natively |
+| Custom front/back-channel logout | `srgLogin.logout(logoutType)` | Works natively |
 | `AccessTokenEntity` | `srgLogin.getAccessToken()` → `SdkResult` | Pattern match on `Success`/`Failure` |
 | N/A | `srgLogin.observeTokenState()` | New: real-time token state observation |
 | N/A | `srgLogin.openSsoClient(url, authContext)` | New: open authenticated web pages |

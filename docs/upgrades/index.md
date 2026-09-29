@@ -14,6 +14,7 @@ If you are integrating the SRG Login SDK for the first time and need to preserve
 
 | Version | Released | Effort | Highlights |
 |---|---|---|---|
+| [v1.0.0-rc.3](/docs/upgrades/v1.0.0-rc.3) | September 2026 | ~15 min | **Browser-less Silent & per-device DeviceOnly logout** · `logout()` default now ends the server session (breaking) · `ClaimValue` → `StructuredValue` rename (breaking) · silent login & `additionalParameters` on web · shared `OidcAuthParams` constants |
 | [v1.0.0-rc.2](/docs/upgrades/v1.0.0-rc.2) | August 2026 | ~5 min | **Web (browser) platform** added · 0 breaking changes · EC JWT verification & non-Chrome Custom Tabs fixes |
 | [v1.0.0-rc.1](/docs/upgrades/v1.0.0-rc.1) | June 2026 | ~5 min | First Release Candidate · no breaking changes (API frozen, identical to beta.13) · new Android TV / Google TV sample app |
 | [v1.0.0-beta.13](/docs/upgrades/v1.0.0-beta.13) | May 2026 | ~15–30 min | `srgLogin.getUserInfo()` API · 2 breaking changes (claims moved to `userInfo`, strict `isAuthenticated()`) · Ktor OkHttp engine on Android |

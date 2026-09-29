@@ -190,6 +190,101 @@ const result = await sdk.handleRedirect();
   </TabItem>
 </Tabs>
 
+## Customizing the Authorization Request
+
+You can forward additional OIDC/OAuth `/authorize` parameters — set the IdP UI language (multilingual SRG: `fr` / `de` / `it` / `rm`), pre-fill an account, force re-authentication, and so on. The well-known parameter **names** and `prompt` **values** are available as constants — `OidcAuthParams` and `OidcPromptValues` — so you never hard-code magic strings.
+
+<Tabs>
+  <TabItem value="android" label="Android" default>
+
+```kotlin
+import ch.srg.login.sdk.auth.OidcAuthParams
+import ch.srg.login.sdk.auth.OidcPromptValues
+
+srgLogin.login(
+    loginMethod = LoginMethod.Web,
+    authContext = authContext,
+    additionalParameters = mapOf(
+        OidcAuthParams.UI_LOCALES to "fr",                 // IdP UI language
+        OidcAuthParams.LOGIN_HINT to "user@example.com",   // pre-fill the account
+        OidcAuthParams.PROMPT to OidcPromptValues.LOGIN,    // force re-authentication
+    ),
+)
+```
+
+  </TabItem>
+  <TabItem value="ios" label="iOS">
+
+```swift
+let flow = srgLogin.login(
+    loginMethod: LoginMethod.Web.shared,
+    authContext: authContext,
+    additionalParameters: [
+        OidcAuthParams.shared.UI_LOCALES: "fr",
+        OidcAuthParams.shared.LOGIN_HINT: "user@example.com",
+        OidcAuthParams.shared.PROMPT: OidcPromptValues.shared.LOGIN,
+    ]
+)
+```
+
+  </TabItem>
+  <TabItem value="web" label="Web">
+
+`SrgLoginWeb.login` takes an optional second argument — a plain object of string→string entries:
+
+```typescript
+import { UI_LOCALES, LOGIN_HINT, PROMPT, PROMPT_LOGIN } from "@swisstxt/srg-login-sdk";
+
+// Kotlin/JS exports top-level constants as { get(): string } — read the key with .get():
+await sdk.login(["profile", "email"], {
+  [UI_LOCALES.get()]: "fr",
+  [LOGIN_HINT.get()]: "user@example.com",
+  [PROMPT.get()]: PROMPT_LOGIN.get(),
+});
+
+// …or pass the literal key strings:
+await sdk.login(["profile", "email"], { ui_locales: "fr" });
+```
+
+:::info Why `.get()` on the web?
+Kotlin/JS exports top-level constants as objects with a `get()` accessor rather than bare strings, so read a constant's value with `.get()` (e.g. `UI_LOCALES.get()` → `"ui_locales"`). Prompt **values** are prefixed `PROMPT_*` (e.g. `PROMPT_LOGIN`) to avoid name collisions with the keys. Non-string values are ignored — the wire format is string-only.
+:::
+
+  </TabItem>
+</Tabs>
+
+| Parameter | Constant | Notes |
+|-----------|----------|-------|
+| `ui_locales` | `OidcAuthParams.UI_LOCALES` | IdP UI language (`fr` / `de` / `it` / `rm`) |
+| `login_hint` | `OidcAuthParams.LOGIN_HINT` | Pre-fill the account identifier |
+| `prompt` | `OidcAuthParams.PROMPT` | Values: `OidcPromptValues.NONE` / `LOGIN` / `CONSENT` / `SELECT_ACCOUNT` |
+| `max_age` | `OidcAuthParams.MAX_AGE` | Maximum authentication age (seconds) |
+
+:::warning Reserved parameters are filtered
+The parameters the SDK sets itself — `client_id`, `redirect_uri`, `response_type`, `state`, `nonce`, PKCE, `scope` — are stripped and cannot be overridden. Only overridable keys have constants.
+:::
+
+## Silent Login (Web)
+
+`SrgLoginWeb.loginSilently()` runs the ordinary authorization-code flow with OIDC `prompt=none`, which forbids the IdP from rendering any UI. Use it to **bootstrap from an existing SSO session** this app has not yet claimed — for example after a device-code sign-in was approved in the same browser, or a session created by another SRG app. It is not invisible: web login is a top-level redirect, so the page still leaves for the IdP and returns; what disappears is the login screen, not the navigation.
+
+```typescript
+await sdk.loginSilently(["profile", "email", "offline_access"]);
+// …then on your callback route:
+const result = await sdk.handleRedirect();
+if (result.errorCode === "InteractionRequired") {
+  // No reusable session — fall back to an interactive login.
+} else if (!result.errorCode) {
+  // Session picked up; getAccessToken() / getUserInfo() reflect it.
+}
+```
+
+The expected negative outcome — no reusable session — surfaces as the typed `SrgLoginError.InteractionRequired` (public error code `"InteractionRequired"`), mapping the four OIDC authorization errors `login_required`, `interaction_required`, `consent_required`, `account_selection_required`. On Kotlin/iOS, an exhaustive `when` / `switch` over `SrgLoginError` must add this case.
+
+:::warning Guard against redirect loops
+A `login_required` answer lands back on your app's start route, so an unguarded automatic attempt bounces forever. Attempt a silent login **at most once per browser session** — for example, set a `sessionStorage` flag before calling `loginSilently()` and skip it if the flag is already set.
+:::
+
 ## OAuth Redirects
 
 <Tabs>
